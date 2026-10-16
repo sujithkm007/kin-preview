@@ -696,7 +696,7 @@ section.night .step:hover,section.night .tile:hover,.bt:hover,.pm:hover{box-shad
   <div class="hcta">
     <p class="sub">Photos, voices and stories on your family tree.</p>
     <a class="btn big" href="#join">Join the waitlist</a>
-    <a class="watch" href="#explainer" id="watchbtn"><span aria-hidden="true">▶</span> Watch Kin in 30s</a>
+    <a class="watch" href="#explainer" id="watchbtn"><span aria-hidden="true">▶</span> Watch Kin in 75s</a>
   </div>
 
   <div class="stage" id="stage" data-s="0" aria-label="Animated demo: a phone photographs grandma, a memory card appears with place and date, and the family tree suggests links that get confirmed" role="img">
@@ -741,7 +741,7 @@ section.night .step:hover,section.night .tile:hover,.bt:hover,.pm:hover{box-shad
 
 
 <section class="night explainer" id="explainer"><div class="wrap center">
-  <h2>Kin in 30 seconds</h2>
+  <h2>Kin in 75 seconds</h2>
   <p class="sub">Muted, with captions.</p>
   <div class="vwrap" id="vwrap">
     <fieldset class="lang" role="radiogroup" aria-label="Video language"><legend>Choose language</legend>
@@ -751,8 +751,8 @@ section.night .step:hover,section.night .tile:hover,.bt:hover,.pm:hover{box-shad
       <label class="soon" aria-disabled="true"><input type="radio" name="vlang" value="ta" disabled> Tamil <small>Soon</small></label>
       <label class="soon" aria-disabled="true"><input type="radio" name="vlang" value="de" disabled> <span lang="de">Deutsch</span> <small>Soon</small></label>
     </fieldset>
-    <div class="vbox" id="vbox"><video id="kv" muted playsinline preload="metadata" poster="poster-en-v2a.jpg" aria-label="Kin explainer video, 30 seconds">
-      <source id="kvsrc" src="explainer-en-v2a.mp4" type="video/mp4">
+    <div class="vbox" id="vbox"><video id="kv" muted playsinline preload="metadata" poster="poster-v3-en.jpg" aria-label="Kin explainer video, 75 seconds">
+      <source id="kvsrc" src="explainer-v3-en.mp4" type="video/mp4">
       <track id="kvtrk" kind="captions" src="captions-en.vtt" srclang="en" label="English">
     </video><button class="vplay" id="vplay" type="button" aria-label="Play video with sound"><span aria-hidden="true">▶</span></button></div>
     <p class="vnote">Captions on. Tap play for sound.</p>
@@ -1133,7 +1133,7 @@ const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){setTime
     timers.push(setTimeout(()=>{xp.classList.remove('playing');btn.classList.add('replay');btn.querySelector('span').textContent='↻';btn.setAttribute('aria-label','Replay the explainer')},T))}
   btn.addEventListener('click',play);
   document.getElementById('watchbtn').addEventListener('click',()=>setTimeout(()=>{if(document.getElementById('explainer').classList.contains('vfail'))play();else window.kinPlayVideo&&kinPlayVideo()},500));
-  cap.textContent='Tap play: how Kin connects a family in 30 seconds.';
+  cap.textContent='Tap play: how Kin connects a family in 75 seconds.';
   window.kinPlayExplainer=play;
   /* storyboard stills for reduced motion */
   const sb=document.querySelector('.storyboard');
@@ -1185,7 +1185,7 @@ b.addEventListener('click',()=>{const on=!b.classList.contains('open');b.classLi
 </script>
 <script>
 (function(){const sec=document.getElementById('explainer'),v=document.getElementById('kv'),src=document.getElementById('kvsrc'),box=document.getElementById('vbox'),pb=document.getElementById('vplay');if(!v)return;
-const M={en:{f:'explainer-en-v2a.mp4',p:'poster-en-v2a.jpg',l:'English'},ml:{f:'explainer-ml.mp4',p:'poster-ml.jpg',l:'മലയാളം'}};
+const M={en:{f:'explainer-v3-en.mp4',p:'poster-v3-en.jpg',l:'English'},ml:{f:'explainer-v3-ml.mp4',p:'poster-v3-ml.jpg',l:'മലയാളം'}};
 let lang;try{lang=localStorage.getItem('kinVideoLang')}catch(e){}
 if(!M[lang])lang=(navigator.language||'en').toLowerCase().startsWith('ml')?'ml':'en';
 function fail(){sec.classList.add('vfail')}
