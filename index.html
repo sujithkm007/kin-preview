@@ -2,6 +2,33 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<style id="kgate-css">
+html.kg-locked body>*:not(#kgate){display:none!important}
+html.kg-locked body{background:radial-gradient(ellipse at 50% 20%,#1d3a4a 0,#0b1026 55%,#05070f 100%);min-height:100vh;margin:0}
+#kgate{display:none}
+html.kg-locked #kgate{display:flex;position:fixed;inset:0;align-items:center;justify-content:center;padding:24px;font-family:Poppins,system-ui,sans-serif;color:#fff7e6;z-index:99999}
+#kgate .kgbox{width:100%;max-width:360px;text-align:center;background:rgba(12,24,40,.82);border:2px solid #5ff2d6;border-radius:24px;padding:28px 22px;box-shadow:0 0 40px rgba(95,242,214,.25)}
+#kgate svg{width:72px;height:72px;filter:drop-shadow(0 0 14px rgba(201,242,138,.45))}
+#kgate p{margin:12px 0 18px;font-weight:700;font-size:1.05rem}
+#kgate label{display:block;text-align:left;font-size:.9rem;margin-bottom:6px;color:#e9dcc6}
+#kgate input{box-sizing:border-box;width:100%;min-height:48px;font-size:16px;border-radius:14px;border:2px solid #3a4466;background:#141b31;color:#fff7e6;padding:0 14px}
+#kgate input:focus{outline:3px solid #ffd27a;outline-offset:2px}
+#kgate button{margin-top:12px;width:100%;min-height:48px;font-size:16px;font-weight:800;border:0;border-radius:99px;background:#c9f28a;color:#0d2a00;cursor:pointer;box-shadow:0 0 16px rgba(201,242,138,.45)}
+#kgate .kgerr{min-height:1.4em;margin:10px 0 0;font-size:.9rem;color:#ffd27a;font-weight:600}
+@media (prefers-reduced-motion:reduce){#kgate *{transition:none!important;animation:none!important}}
+</style>
+<script>
+(function(){var K="kinPreviewOk",H="dfd2ba67483ed05c04d437b4df108b0032564f9935e00e529968171aa8550092",ok=false;try{ok=localStorage.getItem(K)===H}catch(e){}
+if(!ok)document.documentElement.classList.add("kg-locked");
+window.kinGate=function(ev){ev.preventDefault();var f=document.getElementById("kgpw"),er=document.getElementById("kgerr");
+ var v=(f.value||"").trim().toLowerCase();
+ if(!(window.crypto&&crypto.subtle)){er.textContent="Please open this page over https.";return false}
+ crypto.subtle.digest("SHA-256",new TextEncoder().encode(v)).then(function(b){var h=Array.prototype.map.call(new Uint8Array(b),function(x){return("0"+x.toString(16)).slice(-2)}).join("");
+  if(h===H){try{localStorage.setItem(K,H)}catch(e){}document.documentElement.classList.remove("kg-locked");er.textContent=""}
+  else{er.textContent="That's not quite right. Please try again.";f.select()}});return false};
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kin - Keep it in the family</title>
 <meta name="description" content="Kin is a consent-first family memory app. Save photos, voice notes and stories on your family tree. One consent upfront, nothing sold. Now piloting in Palakkad, Kerala.">
@@ -575,6 +602,12 @@ section.night .step:hover,section.night .tile:hover,.bt:hover,.pm:hover{box-shad
 </style>
 </head>
 <body>
+<div id="kgate" role="dialog" aria-modal="true" aria-labelledby="kgt"><form class="kgbox" onsubmit="return kinGate(event)">
+<svg viewBox="0 0 200 200" aria-hidden="true"><rect width="200" height="200" rx="48" fill="#141b31"/><g fill="none" stroke="#d6ee86" stroke-width="16" stroke-linecap="round"><path d="M70 40 V160"/><path d="M74 104 C96 92 116 76 134 56"/><path d="M78 110 C104 124 120 142 140 164"/></g><circle cx="138" cy="50" r="15" fill="#c9f28a"/><circle cx="160" cy="76" r="9" fill="#7fe08a"/><circle cx="114" cy="38" r="7" fill="#ffc46b"/></svg>
+<p id="kgt">Kin is in private preview</p>
+<label for="kgpw">Password</label><input id="kgpw" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required>
+<button type="submit">Enter</button><p class="kgerr" id="kgerr" role="alert" aria-live="polite"></p></form></div>
+
 <div class="trunk" aria-hidden="true"><i class="tfill"></i></div>
 <svg class="roots" viewBox="0 0 200 120" aria-hidden="true" preserveAspectRatio="xMinYMin meet"><g fill="none" stroke="#6b4423" stroke-linecap="round" opacity=".55"><path d="M16 120 C16 80 30 60 70 40 S140 20 190 6" stroke-width="4"/><path d="M16 110 C20 70 10 40 4 4" stroke-width="3"/><path d="M40 62 C60 40 70 20 66 2" stroke-width="2.5"/><path d="M90 34 C110 40 130 50 170 52" stroke-width="2"/><path d="M16 90 C40 80 60 82 100 90" stroke-width="2"/></g></svg>
 
