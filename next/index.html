@@ -68,7 +68,7 @@ section h2{font-size:clamp(1.8rem,5vw,2.6rem);text-align:center;margin-bottom:10
 .hero h1 em{color:var(--goldd);font-style:italic}
 .hero .one{position:relative;font-size:1.15rem;color:var(--mut);max-width:520px;margin:16px auto 26px}
 .show{position:relative;max-width:760px;margin:0 auto}
-.tabs{display:inline-flex;background:#fff;border:1px solid var(--hair);border-radius:999px;padding:4px;margin-bottom:14px}
+.tabs{display:inline-flex;max-width:100%;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;background:#fff;border:1px solid var(--hair);border-radius:999px;padding:4px;margin-bottom:14px}.tabs::-webkit-scrollbar{display:none}.tabs button{flex:0 0 auto;white-space:nowrap;scroll-snap-align:start}
 .tabs button{min-height:44px;padding:0 18px;border-radius:999px;border:0;background:transparent;font:inherit;font-weight:600;color:var(--mut);cursor:pointer}
 .tabs button[aria-selected=true]{background:var(--ink);color:#fffaf0}
 .vcard{background:#fff;border:1px solid var(--hair);border-radius:22px;padding:12px;box-shadow:0 24px 60px rgba(120,80,40,.18)}
@@ -155,13 +155,19 @@ footer{background:#2a2f45;color:#e9e3d6;padding:28px 0 90px;font-size:.88rem;tex
   <h1>Your family’s stories <em>shouldn’t disappear.</em></h1>
   <p class="one">Kin keeps your family’s voices, photos and stories on one living tree, for your children and theirs.</p>
   <div class="show" data-kin-id="VID-1">
-    <div class="tabs" role="tablist" aria-label="Videos"><button role="tab" id="t-main" aria-selected="true" aria-controls="p-main">What is Kin?</button><button role="tab" id="t-tree" aria-selected="false" aria-controls="p-tree">After one year</button></div>
+    <div class="tabs" role="tablist" aria-label="Videos"><button role="tab" id="t-main" aria-selected="true" aria-controls="p-main">What is Kin?</button><button role="tab" id="t-tree" aria-selected="false" aria-controls="p-tree">After one year</button><button role="tab" id="t-g10" aria-selected="false" aria-controls="p-g10">10 generations</button><button role="tab" id="t-deep" aria-selected="false" aria-controls="p-deep">First humans to you</button></div>
     <div class="vcard">
       <div class="panel" id="p-main" role="tabpanel" aria-labelledby="t-main">
         <video id="kv" controls playsinline preload="metadata" poster="poster-v3-en.jpg" aria-label="Kin explainer video, 75 seconds"><source id="kvsrc" src="explainer-v3-en.mp4" type="video/mp4"><track id="kvtrk" kind="captions" src="captions-en.vtt" srclang="en" label="English" default></video>
       </div>
       <div class="panel" id="p-tree" role="tabpanel" aria-labelledby="t-tree" hidden data-kin-id="VID-2">
         <video id="tv" controls playsinline preload="none" poster="poster-tree-en.jpg" aria-label="A family tree after a year with Kin, 45 seconds"><source id="tvsrc" src="explainer-tree-en.mp4" type="video/mp4"><track id="tvtrk" kind="captions" src="captions-tree-en.vtt" srclang="en" label="English" default></video>
+      </div>
+      <div class="panel" id="p-g10" role="tabpanel" aria-labelledby="t-g10" hidden data-kin-id="VID-9">
+        <video id="gv" controls playsinline preload="none" poster="poster-10gen-en.jpg" aria-label="What if Kin existed 10 generations ago? About 60 seconds. An imagined family."><source id="gvsrc" src="explainer-10gen-en.mp4" type="video/mp4"><track id="gvtrk" kind="captions" src="captions-10gen-en.vtt" srclang="en" label="English" default></video>
+      </div>
+      <div class="panel" id="p-deep" role="tabpanel" aria-labelledby="t-deep" hidden data-kin-id="VID-10">
+        <video id="dv" controls playsinline preload="none" poster="poster-deeptime-en.jpg" aria-label="From the first humans to you, about 72 seconds"><source id="dvsrc" src="explainer-deeptime-en.mp4" type="video/mp4"><track id="dvtrk" kind="captions" src="captions-deeptime-en.vtt" srclang="en" label="English" default></video>
       </div>
       <div data-kin-id="LANG-1"><fieldset class="lang" role="radiogroup" aria-label="Video language"><legend class="sr">Video language</legend>
       <label><input type="radio" name="vlang" value="en"> English</label>
@@ -170,7 +176,7 @@ footer{background:#2a2f45;color:#e9e3d6;padding:28px 0 90px;font-size:.88rem;tex
       <label class="soon" aria-disabled="true"><input type="radio" name="vlang" value="ta" disabled> Tamil <small>Soon</small></label>
       <label class="soon" aria-disabled="true"><input type="radio" name="vlang" value="de" disabled> <span lang="de">Deutsch</span> <small>Soon</small></label>
     </fieldset></div>
-      <p class="vnote">75s and 45s videos · captions on · tap play for sound</p>
+      <p class="vnote">Four short videos · captions on · tap play for sound</p>
     </div>
   </div>
   <a class="btn big" href="#join">Join the waitlist</a>
@@ -255,11 +261,11 @@ function swap(vid,srcId,trkId,file,poster,cap,l){const v=document.getElementById
 let lang;try{lang=localStorage.getItem('kinVideoLang')}catch(e){}
 if(!M[lang])lang=(navigator.language||'en').toLowerCase().startsWith('ml')?'ml':'en';
 function set(l,save){lang=l;document.querySelector('input[name=vlang][value='+l+']').checked=true;if(save)try{localStorage.setItem('kinVideoLang',l)}catch(e){}
- swap('kv','kvsrc','kvtrk',M[l].f,M[l].p,'captions-'+l+'.vtt',l);swap('tv','tvsrc','tvtrk',TV[l].f,TV[l].p,'captions-tree-'+l+'.vtt',l)}
+ swap('kv','kvsrc','kvtrk',M[l].f,M[l].p,'captions-'+l+'.vtt',l);swap('tv','tvsrc','tvtrk',TV[l].f,TV[l].p,'captions-tree-'+l+'.vtt',l);swap('gv','gvsrc','gvtrk','explainer-10gen-'+l+'.mp4','poster-10gen-'+l+'.jpg','captions-10gen-'+l+'.vtt',l);swap('dv','dvsrc','dvtrk','explainer-deeptime-'+l+'.mp4','poster-deeptime-'+l+'.jpg','captions-deeptime-'+l+'.vtt',l)}
 document.querySelectorAll('input[name=vlang]:not([disabled])').forEach(r=>r.addEventListener('change',()=>set(r.value,true)));
 set(lang,false);
 // video tabs
-const tabs=[['t-main','p-main','kv'],['t-tree','p-tree','tv']];
+const tabs=[['t-main','p-main','kv'],['t-tree','p-tree','tv'],['t-g10','p-g10','gv'],['t-deep','p-deep','dv']];
 tabs.forEach(([t,p])=>document.getElementById(t).addEventListener('click',()=>{tabs.forEach(([t2,p2,v2])=>{const on=t2===t;document.getElementById(t2).setAttribute('aria-selected',on);document.getElementById(p2).hidden=!on;if(!on)document.getElementById(v2).pause()})}));
 // moments carousel
 const tr=document.getElementById('track'),sl=[...tr.children],mb=[...document.querySelectorAll('.mtabs button')],dots=[...document.querySelectorAll('.dots i')];
