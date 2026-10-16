@@ -738,11 +738,39 @@ html body section.night .btn{background:#1d2230!important;color:#fffaf0!importan
 html body section.night :is(.step,.tile,.fbcard,.prom,.gs,.cd,.panel,.bt,.pm) :is(h2,h3,h4,p,b,span,small,label,legend,div,strong){color:#2a2a30!important}
 html body section.night .prom .e{background:transparent!important;color:#9a7432!important}
 html body section.night .prom .e svg{width:36px;height:36px}
+
+.eng-card{position:relative;max-width:560px;margin:28px auto 0;background:#fffdf8;border:1px solid #e3d6bb;border-radius:18px;padding:44px 22px 22px;text-align:left;color:#2a2a30}
+.exl{position:absolute;top:12px;right:14px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#7a5d24;border:1px solid #c9b48a;border-radius:99px;padding:2px 10px;background:#fbf5e8}
+.eng-card small{display:block;color:#5d5a52;font-size:.82rem;margin-top:4px}
+.wq-flow{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.wq-flow li{position:relative;padding-left:22px;border-left:2px solid #e3d6bb}
+.wq-step{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:#7a5d24}
+.wq-q{font-family:Fraunces,Georgia,serif;font-size:1.2rem;margin:4px 0 0;color:#1d2230}
+.wq-voice{display:flex;align-items:center;gap:10px;background:#f4ecdc;border-radius:99px;padding:8px 14px;margin-top:6px;max-width:300px}
+.wq-voice .play{width:0;height:0;border-left:11px solid #1d2230;border-top:7px solid transparent;border-bottom:7px solid transparent}
+.ewave{width:140px;height:24px;fill:#9a7432}.wq-voice b{font-weight:600;color:#1d2230;font-size:.85rem}
+.wq-leaf{display:flex;align-items:center;gap:10px;margin-top:6px;color:#4f7a45;font-weight:600}.wq-leaf svg{width:36px;height:36px}.wq-leaf span{color:#2a2a30}
+.gp-title{font-family:Fraunces,Georgia,serif;font-size:1.15rem;margin:0 0 12px;color:#1d2230}
+.gp-bar{height:10px;background:#efe6d3;border-radius:99px;overflow:hidden}.gp-bar i{display:block;height:100%;background:linear-gradient(90deg,#b8944a,#d8b46a);border-radius:99px}
+.gp-line{margin:10px 0 0;color:#2a2a30}
+.inv-msg{background:#f4ecdc;border-radius:16px 16px 16px 4px;padding:16px 18px}
+.inv-msg p{font-family:Fraunces,Georgia,serif;font-size:1.15rem;margin:6px 0 14px;color:#1d2230}
+.inv-btn{display:inline-flex;align-items:center;min-height:44px;padding:0 20px;border-radius:99px;background:#1d2230;color:#fffaf0;font-weight:600}
+.rh-t,.yr-h{font-family:Fraunces,Georgia,serif;font-size:1.15rem;margin:0 0 12px;color:#1d2230}
+.rh-weeks{display:flex;gap:8px}.rh-weeks i{flex:1;height:34px;border-radius:8px;background:#8fa98a}.rh-weeks i.rest{background:transparent;border:1px dashed #b5a98f}
+.rh-l{margin:10px 0 6px}.rh-list{margin:8px 0 0;padding-left:18px;color:#2a2a30}.rh-list li{margin:4px 0}
+.yr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.yr-grid div{background:#f4ecdc;border-radius:12px;padding:12px}.yr-grid b{display:block;font-family:Fraunces,Georgia,serif;font-size:1.8rem;font-weight:500;color:#1d2230}.yr-grid span{color:#4a4740;font-size:.88rem}
+.yr-fav{margin:14px 0 4px;font-family:Fraunces,Georgia,serif;font-size:1.1rem;color:#1d2230}
+@media(min-width:760px){.yr-grid{grid-template-columns:repeat(4,1fr)}.wq{max-width:820px}.wq-flow{grid-template-columns:repeat(3,1fr)}.wq-flow li{border-left:0;border-top:2px solid #e3d6bb;padding:14px 0 0}}
 .plan-simple{max-width:640px;margin:0 auto 24px;color:#3d3a34}
+html body section.night .eng-card .inv-btn{color:#fffaf0!important}
+html body section.night .eng-card .exl,html body section.night .eng-card .wq-step{color:#7a5d24!important}
+html body section.night .eng-card .wq-leaf svg{color:#4f7a45!important}
 </style>
 </head>
 <body>
-<div id="kgate" role="dialog" aria-modal="true" aria-labelledby="kgt"><form class="kgbox" onsubmit="return kinGate(event)">
+<div id="kgate" data-kin-id="GATE-1" role="dialog" aria-modal="true" aria-labelledby="kgt"><form class="kgbox" onsubmit="return kinGate(event)">
 <svg viewBox="0 0 200 200" aria-hidden="true"><rect width="200" height="200" rx="48" fill="#141b31"/><g fill="none" stroke="#d6ee86" stroke-width="16" stroke-linecap="round"><path d="M70 40 V160"/><path d="M74 104 C96 92 116 76 134 56"/><path d="M78 110 C104 124 120 142 140 164"/></g><circle cx="138" cy="50" r="15" fill="#c9f28a"/><circle cx="160" cy="76" r="9" fill="#7fe08a"/><circle cx="114" cy="38" r="7" fill="#ffc46b"/></svg>
 <p id="kgt">Kin is in private preview</p>
 <label for="kgpw">Password</label><input id="kgpw" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required>
@@ -840,7 +868,7 @@ html body section.night .prom .e svg{width:36px;height:36px}
   <span class="lumi-tip" aria-hidden="true">It glows when you're near </span>
 </button>
 <div class="wrap">
-<nav>
+<nav data-kin-id="NAV-1">
   <a class="logo" href="#" aria-label="Kin home"><svg class="mark" aria-hidden="true" viewBox="0 0 200 200">
   <defs>
     <linearGradient id="k1g" gradientUnits="userSpaceOnUse" x1="50" y1="30" x2="150" y2="170"><stop offset="0" stop-color="#c9f28a"/><stop offset="1" stop-color="#ffc46b"/></linearGradient>
@@ -862,18 +890,18 @@ html body section.night .prom .e svg{width:36px;height:36px}
     <li><a href="#features">Features</a></li><li><a href="#privacy">Privacy</a></li><li><a href="#faq">FAQ</a></li><li><a href="#feedback">Feedback</a></li>
   </ul>
 </nav>
-<div class="hero-simple" id="explainer">
+<div class="hero-simple" id="explainer" data-kin-id="HERO-1">
     <h1>Your family's stories <span class="shim">shouldn't disappear.</span></h1>
     <p class="sub">Kin keeps your family's voices, photos, stories and timelines, and passes them on across generations.</p>
     <div class="vwrap" id="vwrap">
-    <fieldset class="lang" role="radiogroup" aria-label="Video language"><legend>Choose language</legend>
+    <fieldset class="lang" role="radiogroup" aria-label="Video language" data-kin-id="LANG-1"><legend>Choose language</legend>
       <label><input type="radio" name="vlang" value="en"> English</label>
       <label lang="ml"><input type="radio" name="vlang" value="ml"> മലയാളം</label>
       <label class="soon" aria-disabled="true"><input type="radio" name="vlang" value="hi" disabled> Hindi <small>Soon</small></label>
       <label class="soon" aria-disabled="true"><input type="radio" name="vlang" value="ta" disabled> Tamil <small>Soon</small></label>
       <label class="soon" aria-disabled="true"><input type="radio" name="vlang" value="de" disabled> <span lang="de">Deutsch</span> <small>Soon</small></label>
     </fieldset>
-    <div class="vbox" id="vbox"><video id="kv" muted playsinline preload="metadata" poster="poster-v3-en.jpg" aria-label="Kin explainer video, 75 seconds">
+    <div class="vbox" id="vbox" data-kin-id="VID-1"><video id="kv" muted playsinline preload="metadata" poster="poster-v3-en.jpg" aria-label="Kin explainer video, 75 seconds">
       <source id="kvsrc" src="explainer-v3-en.mp4" type="video/mp4">
       <track id="kvtrk" kind="captions" src="captions-en.vtt" srclang="en" label="English">
     </video><button class="vplay" id="vplay" type="button" aria-label="Play video with sound"><span aria-hidden="true">▶</span></button></div>
@@ -881,9 +909,9 @@ html body section.night .prom .e svg{width:36px;height:36px}
   </div>
     <a class="btn big" href="#join">Join the waitlist</a>
 
-    <div class="treev" id="treev">
+    <div class="treev" id="treev" data-kin-id="VID-2">
       <h2 class="treev-h">See a family tree after a year</h2>
-      <fieldset class="lang lang-sm" role="radiogroup" aria-label="Family tree video language"><legend class="sr">Choose language</legend>
+      <fieldset class="lang lang-sm" data-kin-id="LANG-2" role="radiogroup" aria-label="Family tree video language"><legend class="sr">Choose language</legend>
         <label><input type="radio" name="tlang" value="en"> English</label>
         <label lang="ml"><input type="radio" name="tlang" value="ml"> മലയാളം</label>
         <label class="soon" aria-disabled="true"><input type="radio" name="tlang" value="hi" disabled> Hindi <small>Soon</small></label>
@@ -905,7 +933,7 @@ html body section.night .prom .e svg{width:36px;height:36px}
 
 
 
-<section class="grow night"><svg class="br" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 58 C30 58 45 30 96 26"/><ellipse class="lf" cx="96" cy="22" rx="14" ry="7" fill="#2e7d00" transform="rotate(-20 96 22)"/></svg><div class="wrap center" id="features">
+<section class="grow night"><svg class="br" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 58 C30 58 45 30 96 26"/><ellipse class="lf" cx="96" cy="22" rx="14" ry="7" fill="#2e7d00" transform="rotate(-20 96 22)"/></svg><div class="wrap center" id="features" data-kin-id="SEC-1">
   <h2>How it works</h2>
   <div class="how">
     <div class="step"><svg class="ic line" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="14" width="36" height="26" rx="4"/><path d="M17 14l3-5h8l3 5"/><circle cx="24" cy="27" r="7"/></svg><div class="n" style="background:#2e7d00">1</div><h3>Snap or record</h3></div>
@@ -915,22 +943,22 @@ html body section.night .prom .e svg{width:36px;height:36px}
 </div></section>
 
 
-<section class="grow night tpl" id="templates"><div class="wrap center">
+<section class="grow night tpl" id="templates" data-kin-id="SEC-2"><div class="wrap center">
   <h2>Memory templates</h2>
   <p class="sub">No idea what to record? Pick a card. Kin guides you.</p>
   <div class="tgrid"><button type="button" class="tc" data-t="a" data-ic="" data-du="2 min" data-q="What was served?|Who cooked?|A funny moment"><span class="ti"><span class="ty a" aria-hidden="true"></span><span class="du">2 min</span></span><b>Muthassi’s sadhya story</b><ol><li>What was served?</li><li>Who cooked?</li><li>A funny moment</li></ol></button><button type="button" class="tc" data-t="v" data-ic="" data-du="1 min" data-q="The gate|The kitchen|Your favourite corner"><span class="ti"><span class="ty v" aria-hidden="true"></span><span class="du">1 min</span></span><b>Tour of the old house</b><ol><li>The gate</li><li>The kitchen</li><li>Your favourite corner</li></ol></button><button type="button" class="tc" data-t="a" data-ic="" data-du="2 min" data-q="Sing a few lines|When did he sing it?|How did it make you feel?"><span class="ti"><span class="ty a" aria-hidden="true"></span><span class="du">2 min</span></span><b>A song Achan used to sing</b><ol><li>Sing a few lines</li><li>When did he sing it?</li><li>How did it make you feel?</li></ol></button><button type="button" class="tc" data-t="p" data-ic="" data-du="Photo+voice" data-q="Snap the elephants|Who went with you?|Say what you hear"><span class="ti"><span class="ty p" aria-hidden="true"></span><span class="du">Photo+voice</span></span><b>Puram day</b><ol><li>Snap the elephants</li><li>Who went with you?</li><li>Say what you hear</li></ol></button><button type="button" class="tc" data-t="v" data-ic="" data-du="60 s" data-q="What happened?|Who helped you?|What would you tell them?"><span class="ti"><span class="ty v" aria-hidden="true"></span><span class="du">60 s</span></span><b>A proud moment in 60 seconds</b><ol><li>What happened?</li><li>Who helped you?</li><li>What would you tell them?</li></ol></button><button type="button" class="tc" data-t="p" data-ic="" data-du="Photo pair" data-q="Find an old photo|Stand in the same spot|What changed?"><span class="ti"><span class="ty p" aria-hidden="true"></span><span class="du">Photo pair</span></span><b>Then and now</b><ol><li>Find an old photo</li><li>Stand in the same spot</li><li>What changed?</li></ol></button></div>
 </div></section>
 <div class="gc" id="gc" role="dialog" aria-modal="true" aria-labelledby="gct"><div class="gcp"><button class="x" type="button" aria-label="Close"></button><p class="du" id="gcd" style="display:inline-block;color:#5a4a2f;background:#f1e2c4;border-radius:99px;padding:3px 10px;font-size:.78rem;font-weight:800"></p><h3 id="gct"></h3><div class="dots" aria-hidden="true"></div><p class="gq" id="gcq" aria-live="polite"></p><button class="rec" type="button" aria-label="Record (demo)" aria-pressed="false"></button><div class="tm" id="gctm">00:00</div><div class="gnav"><button type="button" class="bk">Back</button><button type="button" class="nx">Next</button></div><p style="font-size:.75rem;opacity:.8;margin-top:10px">Demo only · nothing is recorded</p></div></div>
-<section class="grow night proud"><div class="wrap center">
+<section class="grow night proud" data-kin-id="SEC-3"><div class="wrap center">
   <h2>Proud moments</h2>
   <p class="sub">Celebrate graduations, weddings and new arrivals together.</p>
   <div class="pmgrid"><button type="button" class="pm" aria-pressed="false"><span class="bl" aria-hidden="true"><span></span></span><b>Graduation</b><span class="cheer" aria-hidden="true"> <i>0</i></span></button><button type="button" class="pm" aria-pressed="false"><span class="bl" aria-hidden="true"><span></span></span><b>First job</b><span class="cheer" aria-hidden="true"> <i>0</i></span></button><button type="button" class="pm" aria-pressed="false"><span class="bl" aria-hidden="true"><span></span></span><b>Wedding</b><span class="cheer" aria-hidden="true"> <i>0</i></span></button><button type="button" class="pm" aria-pressed="false"><span class="bl" aria-hidden="true"><span></span></span><b>A child is born</b><span class="cheer" aria-hidden="true"> <i>0</i></span></button><button type="button" class="pm" aria-pressed="false"><span class="bl" aria-hidden="true"><span></span></span><b>New home</b><span class="cheer" aria-hidden="true"> <i>0</i></span></button><button type="button" class="pm" aria-pressed="false"><span class="bl" aria-hidden="true"><span></span></span><b>Award</b><span class="cheer" aria-hidden="true"> <i>0</i></span></button><button type="button" class="pm" aria-pressed="false"><span class="bl" aria-hidden="true"><span></span></span><b>First flight abroad</b><span class="cheer" aria-hidden="true"> <i>0</i></span></button><button type="button" class="pm" aria-pressed="false"><span class="bl" aria-hidden="true"><span></span></span><b>Retirement</b><span class="cheer" aria-hidden="true"> <i>0</i></span></button><button type="button" class="pm" aria-pressed="false"><span class="bl" aria-hidden="true"><span></span></span><b>Your own</b><span class="cheer" aria-hidden="true"> <i>0</i></span></button></div>
 </div></section>
-<section class="grow night pets" id="pets"><div class="wrap center">
+<section class="grow night pets" id="pets" data-kin-id="SEC-4"><div class="wrap center">
   <h2>Pets are family too</h2>
   <p class="sub">Kannan the dog and Minnu the cat have a place on the tree too, with their own photos, sounds and stories.</p>
 </div></section>
-<section class="grow night gift" id="gift"><div class="wrap center">
+<section class="grow night gift" id="gift" data-kin-id="SEC-5"><div class="wrap center">
   <h2>Gift a memory</h2>
   <p class="sub">A secret collection from everyone who loves them. It opens on the big day.</p>
   <div class="gsteps">
@@ -938,10 +966,25 @@ html body section.night .prom .e svg{width:36px;height:36px}
     <div class="gs"><span class="n">2</span><h3>Everyone adds a memory</h3><div class="av" aria-label="Relatives and friends joining (example)"><i></i><i></i><i></i><i></i><i></i><i>+18</i></div><p aria-hidden="true">   </p><p class="anon">“From someone who loves you”</p></div>
     <div class="gs"><span class="n">3</span><h3>It unwraps on the day</h3><button type="button" class="gbox" aria-label="Open the gift (demo)" aria-pressed="false"><span class="bk2" aria-hidden="true"></span><span class="bx"></span><span class="lid"></span></button><p class="unw">A surprise memory book. Tap the gift.</p></div>
   </div>
+
+  <div class="eng-card gc-prog" data-kin-id="SEC-10"><span class="exl">Example</span>
+    <p class="gp-title">Amma &amp; Achan’s anniversary gift</p>
+    <div class="gp-bar" role="img" aria-label="6 of 9 relatives have added a memory"><i style="width:66%"></i></div>
+    <p class="gp-line"><b>6 of 9 relatives added a memory</b> · 12 days to go</p>
+    <small>Kept secret until the day. Each memory shows who it is from when the gift opens.</small>
+  </div>
+</div></section>
+<section class="grow night eng" id="invite" data-kin-id="SEC-11"><div class="wrap center">
+  <h2>Invite by asking</h2>
+  <p class="sub">Instead of “join Kin”, ask one person for one memory. They can answer straight away, without signing up.</p>
+  <div class="eng-card inv"><span class="exl">Example</span>
+    <div class="inv-msg"><small>Message from Anu to Uncle Ravi</small><p>“Can you add your memory of Appooppan’s shop? A voice note or one photo is perfect.”</p><span class="inv-btn">Add your memory</span><small class="inv-note">No sign-up or app needed to answer</small></div>
+  </div>
 </div></section>
 
 
-<section class="grow night" id="privacy"><svg class="br" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 58 C30 58 45 30 96 26"/><ellipse class="lf" cx="96" cy="22" rx="14" ry="7" fill="#7cc242" transform="rotate(-20 96 22)"/></svg><div class="wrap center">
+
+<section class="grow night" id="privacy" data-kin-id="SEC-6"><svg class="br" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 58 C30 58 45 30 96 26"/><ellipse class="lf" cx="96" cy="22" rx="14" ry="7" fill="#7cc242" transform="rotate(-20 96 22)"/></svg><div class="wrap center">
   <h2>Private to your family</h2>
   <div class="proms">
     <div class="prom" style="background:#ffe5e5"><span class="e"><svg class="ic line" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="22" width="24" height="18" rx="3"/><path d="M17 22v-6a7 7 0 0 1 14 0v6"/></svg></span><div>Never sold<small>Your family’s memories are never sold to anyone.</small></div></div>
@@ -951,7 +994,7 @@ html body section.night .prom .e svg{width:36px;height:36px}
   <p class="sub" style="margin-top:16px;font-size:.9rem"> EU-hosted ·  Export everything ·  No DNA, no ancestry claims</p>
 </div></section>
 
-<section class="grow night prompts"><span class="night-lant" aria-hidden="true" style="left:12%;top:40px"></span><svg class="br" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 58 C30 58 45 30 96 26"/><ellipse class="lf" cx="96" cy="22" rx="14" ry="7" fill="#3f8f1f" transform="rotate(-20 96 22)"/></svg><div class="wrap center">
+<section class="grow night prompts" data-kin-id="SEC-7"><span class="night-lant" aria-hidden="true" style="left:12%;top:40px"></span><svg class="br" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 58 C30 58 45 30 96 26"/><ellipse class="lf" cx="96" cy="22" rx="14" ry="7" fill="#3f8f1f" transform="rotate(-20 96 22)"/></svg><div class="wrap center">
   <h2>A question every week</h2>
   <p class="sub">Answer with a photo, voice or a line.</p>
   <div class="pgrid">
@@ -966,12 +1009,41 @@ html body section.night .prom .e svg{width:36px;height:36px}
     <div class="pc" style="background:#1cb0f6"><svg viewBox="0 0 200 150" preserveAspectRatio="xMidYMid slice"><rect width="200" height="150" fill="#6fcff9"/><rect y="110" width="200" height="40" fill="#5bbf3a"/><path d="M0 118h200" stroke="#8b5a2b" stroke-width="4"/><rect x="20" y="70" width="70" height="40" rx="8" fill="#ff4b4b"/><rect x="95" y="70" width="70" height="40" rx="8" fill="#ff4b4b"/><g fill="#fff"><rect x="28" y="78" width="14" height="12" rx="3"/><rect x="48" y="78" width="14" height="12" rx="3"/><rect x="68" y="78" width="14" height="12" rx="3"/><rect x="103" y="78" width="14" height="12" rx="3"/><rect x="123" y="78" width="14" height="12" rx="3"/><rect x="143" y="78" width="14" height="12" rx="3"/></g><circle cx="40" cy="113" r="6" fill="#333"/><circle cx="70" cy="113" r="6" fill="#333"/><circle cx="115" cy="113" r="6" fill="#333"/><circle cx="145" cy="113" r="6" fill="#333"/><circle cx="175" cy="50" r="10" fill="#fff" opacity=".8"/><circle cx="188" cy="38" r="7" fill="#fff" opacity=".6"/></svg><p><small>Journeys</small>Your first train ride?</p></div>
     <div class="pc" style="background:#ce82ff"><svg viewBox="0 0 200 150" preserveAspectRatio="xMidYMid slice"><rect width="200" height="150" fill="#ffd6a5"/><circle cx="150" cy="50" r="22" fill="#ffc800"/><path d="M0 80 q25-12 50 0 t50 0 t50 0 t50 0 V150 H0z" fill="#1cb0f6"/><path d="M0 98 q25-10 50 0 t50 0 t50 0 t50 0 V150 H0z" fill="#1899d6"/><path d="M0 125 q50-18 100-4 t100 0 V150 H0z" fill="#ffe08a"/><path d="M40 125 l-10-40 q20-8 26 6z" fill="#3a9b2a"/></svg><p><small>Firsts</small>First time you saw the sea?</p></div>
   </div>
+
+  <div class="eng-card wq" data-kin-id="SEC-9"><span class="exl">Example</span>
+    <ol class="wq-flow">
+      <li><span class="wq-step">This week’s question</span><p class="wq-q">“Muthassi, what was your wedding day like?”</p><small>Sent by Meera to Muthassi’s phone</small></li>
+      <li><span class="wq-step">Her answer</span><div class="wq-voice"><span class="play" aria-hidden="true"></span><svg class="ewave" viewBox="0 0 120 24" aria-hidden="true"><rect x="0" y="9" width="3" height="6" rx="1.5"/><rect x="6" y="6" width="3" height="12" rx="1.5"/><rect x="12" y="3" width="3" height="18" rx="1.5"/><rect x="18" y="7" width="3" height="10" rx="1.5"/><rect x="24" y="2" width="3" height="20" rx="1.5"/><rect x="30" y="5" width="3" height="14" rx="1.5"/><rect x="36" y="8" width="3" height="8" rx="1.5"/><rect x="42" y="4" width="3" height="16" rx="1.5"/><rect x="48" y="1" width="3" height="22" rx="1.5"/><rect x="54" y="6" width="3" height="12" rx="1.5"/><rect x="60" y="9" width="3" height="6" rx="1.5"/><rect x="66" y="5" width="3" height="14" rx="1.5"/><rect x="72" y="3" width="3" height="18" rx="1.5"/><rect x="78" y="7" width="3" height="10" rx="1.5"/><rect x="84" y="4" width="3" height="16" rx="1.5"/><rect x="90" y="8" width="3" height="8" rx="1.5"/><rect x="96" y="6" width="3" height="12" rx="1.5"/><rect x="102" y="9" width="3" height="6" rx="1.5"/><rect x="108" y="7" width="3" height="10" rx="1.5"/><rect x="114" y="10" width="3" height="4" rx="1.5"/></svg><b>1:42</b></div><small>Recorded by voice, no app needed</small></li>
+      <li><span class="wq-step">On the tree</span><div class="wq-leaf"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M24 44V22"/><path d="M24 26c-9 0-14-6-14-14 8 0 14 5 14 14zM24 22c0-9 6-14 14-14 0 8-5 14-14 14z"/></svg><span>New leaf on Muthassi’s branch</span></div><small>The whole family can listen</small></li>
+    </ol>
+  </div>
+</div></section>
+<section class="grow night eng" id="rhythm" data-kin-id="SEC-12"><div class="wrap center">
+  <h2>Your family’s own rhythm</h2>
+  <p class="sub">Choose a pace that suits your family, like one story a week. Busy week? Nothing is lost, and nobody is blamed.</p>
+  <div class="eng-card rh"><span class="exl">Example</span>
+    <p class="rh-t">Our rhythm: one story a week</p>
+    <div class="rh-weeks" aria-label="Recent weeks: 7 weeks with stories, one quiet week"><i class="on"></i><i class="on"></i><i class="on"></i><i class="rest" title="Quiet week"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+    <p class="rh-l"><b>7 stories in the last 8 weeks</b> · quiet weeks are fine</p>
+    <ul class="rh-list"><li>No streaks and no guilt messages</li><li>Pause anytime, for travel, exams or a hard time</li></ul>
+  </div>
+</div></section>
+<section class="grow night eng" id="year" data-kin-id="SEC-13"><div class="wrap center">
+  <h2>A Year in Kin</h2>
+  <p class="sub">Once a year, your family gets a warm recap of everything you kept together. Private to your family.</p>
+  <div class="eng-card yr"><span class="exl">Example</span>
+    <p class="yr-h">The Menon family · Year in Kin 2026</p>
+    <div class="yr-grid"><div><b>48</b><span>stories saved</span></div><div><b>12</b><span>voices kept</span></div><div><b>3</b><span>new branches</span></div><div><b>5</b><span>proud moments</span></div></div>
+    <p class="yr-fav"><small>Most-loved memory</small>“Muthassi singing at Onam”</p>
+    <small class="yr-note">Only your family sees this. Nobody is ranked.</small>
+  </div>
 </div></section>
 
 
 
 
-<section class="grow night fbk" id="feedback"><span class="night-lant" aria-hidden="true" style="right:14%;top:80px"></span><svg class="br" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 58 C30 58 45 30 96 26"/><ellipse class="lf" cx="96" cy="22" rx="14" ry="7" fill="#58a32a" transform="rotate(-20 96 22)"/></svg><div class="wrap center">
+
+<section class="grow night fbk" id="feedback" data-kin-id="FORM-2"><span class="night-lant" aria-hidden="true" style="right:14%;top:80px"></span><svg class="br" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 58 C30 58 45 30 96 26"/><ellipse class="lf" cx="96" cy="22" rx="14" ry="7" fill="#58a32a" transform="rotate(-20 96 22)"/></svg><div class="wrap center">
   <h2>Tell us what you think</h2>
   <p class="sub">Two taps. Totally optional.</p>
   <div class="fbcard" data-fb="reaction">
@@ -1001,11 +1073,11 @@ html body section.night .prom .e svg{width:36px;height:36px}
     <p class="fnote">Feedback is anonymous unless you add contact details. Used only to improve Kin, never sold.</p>
     <p class="ty" role="status">Vote counted! </p>
   </div>
-  <a class="wa" href="https://wa.me/910000000000?text=Hi%20Kin!%20My%20feedback%3A%20" target="_blank" rel="noopener"> Share feedback on WhatsApp</a>
+  <a class="wa" data-kin-id="WA-1" href="https://wa.me/910000000000?text=Hi%20Kin!%20My%20feedback%3A%20" target="_blank" rel="noopener"> Share feedback on WhatsApp</a>
   <span class="ph-note">Placeholder number (+91 00000 00000), replace before launch.</span>
 </div></section>
 <div class="canopy" aria-hidden="true"><svg viewBox="0 0 180 90"><g><ellipse cx="40" cy="50" rx="26" ry="14" fill="#7cc242" transform="rotate(-25 40 50)"/><ellipse cx="90" cy="30" rx="30" ry="15" fill="#58a32a"/><ellipse cx="140" cy="50" rx="26" ry="14" fill="#2e7d00" transform="rotate(25 140 50)"/><circle cx="66" cy="22" r="7" fill="#ff8fab"/><circle cx="66" cy="22" r="3" fill="#ffd84d"/><circle cx="120" cy="18" r="7" fill="#ffb4c8"/><circle cx="120" cy="18" r="3" fill="#ffd84d"/><circle cx="100" cy="62" r="6" fill="#ff8fab"/><circle cx="100" cy="62" r="2.5" fill="#ffd84d"/></g></svg></div>
-<section class="grow day" style="padding-top:40px"><svg class="br" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 58 C30 58 45 30 96 26"/><ellipse class="lf" cx="96" cy="22" rx="14" ry="7" fill="#7cc242" transform="rotate(-20 96 22)"/></svg><div class="wrap center">
+<section class="grow day" data-kin-id="SEC-8" style="padding-top:40px"><svg class="br" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 58 C30 58 45 30 96 26"/><ellipse class="lf" cx="96" cy="22" rx="14" ry="7" fill="#7cc242" transform="rotate(-20 96 22)"/></svg><div class="wrap center">
   <p class="plan-simple">Kin is free to start. Any paid extras will be explained clearly before launch.</p>
   <div class="faq" id="faq">
     <h3 style="font-size:1.3rem;color:var(--mut);margin:34px 0 12px">Quick questions</h3>
@@ -1016,7 +1088,7 @@ html body section.night .prom .e svg{width:36px;height:36px}
     <details><summary>Is this a DNA or ancestry service?</summary><p>No. Kin keeps the stories your family tells, nothing genetic.</p></details>
   </div></div></section>
 
-<section class="wl" id="join"><span class="ff" aria-hidden="true" style="left:10%;top:80px;animation-delay:1s"></span><span class="ff" aria-hidden="true" style="left:85%;top:140px;animation-delay:3s"></span><span class="ff" aria-hidden="true" style="left:70%;top:40px;animation-delay:2s"></span><svg class="palm" viewBox="0 0 180 260" aria-hidden="true"><path d="M100 260 C96 200 92 140 104 80" stroke="#f5ead6" stroke-width="8" fill="none"/><g fill="#f5ead6"><path d="M104 80 C70 60 40 70 10 96 C50 78 80 80 104 84z"/><path d="M104 80 C130 50 160 52 180 70 C150 62 128 68 106 84z"/><path d="M104 80 C90 40 70 24 40 18 C70 34 88 52 102 82z"/><path d="M104 80 C120 40 140 26 170 22 C140 40 122 56 106 82z"/><circle cx="104" cy="88" r="6"/><circle cx="96" cy="86" r="5"/></g><g class="tip"><circle cx="10" cy="96" r="5"/><circle cx="180" cy="70" r="5"/><circle cx="40" cy="18" r="5"/><circle cx="170" cy="22" r="5"/></g></svg><div class="wrap center">
+<section class="wl" id="join" data-kin-id="FORM-1"><span class="ff" aria-hidden="true" style="left:10%;top:80px;animation-delay:1s"></span><span class="ff" aria-hidden="true" style="left:85%;top:140px;animation-delay:3s"></span><span class="ff" aria-hidden="true" style="left:70%;top:40px;animation-delay:2s"></span><svg class="palm" viewBox="0 0 180 260" aria-hidden="true"><path d="M100 260 C96 200 92 140 104 80" stroke="#f5ead6" stroke-width="8" fill="none"/><g fill="#f5ead6"><path d="M104 80 C70 60 40 70 10 96 C50 78 80 80 104 84z"/><path d="M104 80 C130 50 160 52 180 70 C150 62 128 68 106 84z"/><path d="M104 80 C90 40 70 24 40 18 C70 34 88 52 102 82z"/><path d="M104 80 C120 40 140 26 170 22 C140 40 122 56 106 82z"/><circle cx="104" cy="88" r="6"/><circle cx="96" cy="86" r="5"/></g><g class="tip"><circle cx="10" cy="96" r="5"/><circle cx="180" cy="70" r="5"/><circle cx="40" cy="18" r="5"/><circle cx="170" cy="22" r="5"/></g></svg><div class="wrap center">
   <svg class="sapling" id="sapling" data-g="0" viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="90" rx="34" ry="8" fill="#8a5a3c"/><circle class="seed" cx="50" cy="84" r="5" fill="#ffd27a"/><g class="sp"><path class="stem" d="M50 88 V30" stroke="#c49a6c" stroke-width="5" stroke-linecap="round"/><path class="l1" d="M50 72 C32 70 24 58 26 46 C42 46 50 58 50 72z" fill="#7cc242"/><path class="l2" d="M50 62 C68 60 78 46 76 32 C58 34 48 46 50 62z" fill="#58cc02"/><path class="l3" d="M50 46 C36 40 32 28 36 18 C48 22 52 34 50 46z" fill="#9be15d"/><g class="l4"><circle cx="64" cy="26" r="6" fill="#ffd27a"/><circle cx="64" cy="26" r="2.5" fill="#fff4c2"/></g></g></svg>
   <p class="grow-msg" id="growmsg" aria-live="polite">Your seed is ready.</p>
   <h2>Plant your family's tree</h2>
@@ -1047,9 +1119,9 @@ html body section.night .prom .e svg{width:36px;height:36px}
 </div></section>
 
 
-<div class="stickycta" id="stickycta" aria-hidden="true"><span> Plant your family's tree</span><a class="btn" href="#join" tabindex="-1">Join</a></div>
-<button class="fab" id="fab" type="button" aria-haspopup="dialog" aria-controls="fbm">Feedback</button>
-<div class="modal" id="fbm" role="dialog" aria-modal="true" aria-labelledby="fbmt">
+<div class="stickycta" id="stickycta" data-kin-id="STICKY-1" aria-hidden="true"><span> Plant your family's tree</span><a class="btn" href="#join" tabindex="-1">Join</a></div>
+<button class="fab" id="fab" data-kin-id="FORM-3" type="button" aria-haspopup="dialog" aria-controls="fbm">Feedback</button>
+<div class="modal" id="fbm" data-kin-id="FORM-3" role="dialog" aria-modal="true" aria-labelledby="fbmt">
   <div class="sheet">
     <button class="x" type="button" id="fbx" aria-label="Close"></button>
     <form id="fbf" novalidate>
@@ -1068,7 +1140,7 @@ html body section.night .prom .e svg{width:36px;height:36px}
     <div class="thx" id="fbty" role="status" style="padding:10px 0"><h3 style="padding:0">Thank you! </h3><p class="sub">Your feedback helps shape Kin.</p></div>
   </div>
 </div>
-<footer class="foot">
+<footer class="foot" data-kin-id="FOOT-1">
   <svg class="foot-land" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0 80 V40 C160 10 300 50 460 30 C640 6 760 50 940 36 C1120 22 1280 50 1440 30 V80Z" fill="#2a1a0d"/><g fill="#c9f28a"><circle cx="120" cy="38" r="2.5" opacity=".7"/><circle cx="380" cy="40" r="2.5" opacity=".7"/><circle cx="700" cy="34" r="2.5" opacity=".7"/><circle cx="1010" cy="40" r="2.5" opacity=".7"/><circle cx="1300" cy="38" r="2.5" opacity=".7"/></g></svg>
   <div class="wrap foot-grid">
     <div><div class="flogo"><svg class="mark" aria-hidden="true" viewBox="0 0 200 200">
