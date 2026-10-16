@@ -256,19 +256,22 @@ section h2{font-size:clamp(2rem,6.5vw,3rem);font-weight:520}
 </div>
   <p class="tap">Tap a glowing leaf. <span>Examples</span></p>
   <div class="show" data-kin-id="VID-1">
-    <div class="tabs" role="tablist" aria-label="Videos"><button role="tab" id="t-main" aria-selected="true" aria-controls="p-main">What is Kin?</button><button role="tab" id="t-tree" aria-selected="false" aria-controls="p-tree">After one year</button><button role="tab" id="t-g10" aria-selected="false" aria-controls="p-g10">10 generations</button><button role="tab" id="t-deep" aria-selected="false" aria-controls="p-deep">First humans to you</button></div>
+    <div class="tabs" role="tablist" aria-label="Videos"><button role="tab" id="t-main" aria-selected="true" aria-controls="p-main">What is Kin?</button><button role="tab" id="t-tree" aria-selected="false" aria-controls="p-tree">After one year</button><button role="tab" id="t-g10" aria-selected="false" aria-controls="p-g10">10 generations</button><button role="tab" id="t-deep" aria-selected="false" aria-controls="p-deep">First humans to you</button><button role="tab" id="t-miss" aria-selected="false" aria-controls="p-miss">What you’ll miss</button></div>
     <div class="vcard">
       <div class="panel" id="p-main" role="tabpanel" aria-labelledby="t-main">
-        <video id="kv" controls playsinline preload="metadata" poster="poster-v3-en.jpg" aria-label="Kin explainer video, 75 seconds"><source id="kvsrc" src="explainer-v3-en.mp4" type="video/mp4"><track id="kvtrk" kind="captions" src="captions-en.vtt" srclang="en" label="English" default></video>
+        <video id="kv" controls playsinline preload="metadata" poster="poster-v3-v2-en.jpg" aria-label="What is Kin, about 80 seconds"><source id="kvsrc" src="explainer-v3-v2-en.mp4" type="video/mp4"><track id="kvtrk" kind="captions" src="captions-v3-v2-en.vtt" srclang="en" label="English" default></video>
       </div>
       <div class="panel" id="p-tree" role="tabpanel" aria-labelledby="t-tree" hidden data-kin-id="VID-2">
-        <video id="tv" controls playsinline preload="none" poster="poster-tree-en.jpg" aria-label="A family tree after a year with Kin, 45 seconds"><source id="tvsrc" src="explainer-tree-en.mp4" type="video/mp4"><track id="tvtrk" kind="captions" src="captions-tree-en.vtt" srclang="en" label="English" default></video>
+        <video id="tv" controls playsinline preload="none" poster="poster-tree-v2-en.jpg" aria-label="A family tree after a year with Kin, about 47 seconds"><source id="tvsrc" src="explainer-tree-v2-en.mp4" type="video/mp4"><track id="tvtrk" kind="captions" src="captions-tree-v2-en.vtt" srclang="en" label="English" default></video>
       </div>
       <div class="panel" id="p-g10" role="tabpanel" aria-labelledby="t-g10" hidden data-kin-id="VID-9">
-        <video id="gv" controls playsinline preload="none" poster="poster-10gen-en.jpg" aria-label="What if Kin existed 10 generations ago? About 60 seconds. An imagined family."><source id="gvsrc" src="explainer-10gen-en.mp4" type="video/mp4"><track id="gvtrk" kind="captions" src="captions-10gen-en.vtt" srclang="en" label="English" default></video>
+        <video id="gv" controls playsinline preload="none" poster="poster-10gen-v2-en.jpg" aria-label="What if Kin existed 10 generations ago? About 64 seconds. An imagined family."><source id="gvsrc" src="explainer-10gen-v2-en.mp4" type="video/mp4"><track id="gvtrk" kind="captions" src="captions-10gen-v2-en.vtt" srclang="en" label="English" default></video>
       </div>
       <div class="panel" id="p-deep" role="tabpanel" aria-labelledby="t-deep" hidden data-kin-id="VID-10">
-        <video id="dv" controls playsinline preload="none" poster="poster-deeptime-en.jpg" aria-label="From the first humans to you, about 72 seconds"><source id="dvsrc" src="explainer-deeptime-en.mp4" type="video/mp4"><track id="dvtrk" kind="captions" src="captions-deeptime-en.vtt" srclang="en" label="English" default></video>
+        <video id="dv" controls playsinline preload="none" poster="poster-deeptime-v2-en.jpg" aria-label="From the first humans to you, about 78 seconds"><source id="dvsrc" src="explainer-deeptime-v2-en.mp4" type="video/mp4"><track id="dvtrk" kind="captions" src="captions-deeptime-v2-en.vtt" srclang="en" label="English" default></video>
+      </div>
+      <div class="panel" id="p-miss" role="tabpanel" aria-labelledby="t-miss" hidden data-kin-id="VID-11">
+        <video id="mv" controls playsinline preload="none" poster="poster-miss-v2-en.jpg" aria-label="What you’ll miss without Kin, about 50 seconds"><source id="mvsrc" src="explainer-miss-v2-en.mp4" type="video/mp4"><track id="mvtrk" kind="captions" src="captions-miss-v2-en.vtt" srclang="en" label="English" default></video>
       </div>
       <div data-kin-id="LANG-1"><fieldset class="lang" role="radiogroup" aria-label="Video language"><legend class="sr">Video language</legend>
       <label><input type="radio" name="vlang" value="en"> English</label>
@@ -277,7 +280,7 @@ section h2{font-size:clamp(2rem,6.5vw,3rem);font-weight:520}
       <label class="soon" aria-disabled="true"><input type="radio" name="vlang" value="ta" disabled> Tamil <small>Soon</small></label>
       <label class="soon" aria-disabled="true"><input type="radio" name="vlang" value="de" disabled> <span lang="de">Deutsch</span> <small>Soon</small></label>
     </fieldset></div>
-      <p class="vnote">Four short videos · captions on · tap play for sound</p>
+      <p class="vnote">Five short videos · captions on · tap play for sound</p>
     </div>
   </div>
   <a class="btn big" href="#join">Join the waitlist</a>
@@ -355,19 +358,18 @@ section h2{font-size:clamp(2rem,6.5vw,3rem);font-weight:520}
 </div></div>
 <script>
 (function(){
-const M={en:{f:'explainer-v3-en.mp4',p:'poster-v3-en.jpg',l:'English'},ml:{f:'explainer-v3-ml.mp4',p:'poster-v3-ml.jpg',l:'മലയാളം'}};
-const TV={en:{f:'explainer-tree-en.mp4',p:'poster-tree-en.jpg'},ml:{f:'explainer-tree-ml.mp4',p:'poster-tree-ml.jpg'}};
+const M={en:{l:'English'},ml:{l:'മലയാളം'}};
 function swap(vid,srcId,trkId,file,poster,cap,l){const v=document.getElementById(vid),was=!v.paused;document.getElementById(srcId).src=file;v.poster=poster;
  const o=document.getElementById(trkId),t=document.createElement('track');t.id=trkId;t.kind='captions';t.src=cap;t.srclang=l;t.label=M[l].l;t.default=true;o.replaceWith(t);v.load();
  t.addEventListener('load',()=>{if(v.textTracks[0])v.textTracks[0].mode='showing'});if(was)v.play().catch(()=>{})}
 let lang;try{lang=localStorage.getItem('kinVideoLang')}catch(e){}
 if(!M[lang])lang=(navigator.language||'en').toLowerCase().startsWith('ml')?'ml':'en';
 function set(l,save){lang=l;document.querySelector('input[name=vlang][value='+l+']').checked=true;if(save)try{localStorage.setItem('kinVideoLang',l)}catch(e){}
- swap('kv','kvsrc','kvtrk',M[l].f,M[l].p,'captions-'+l+'.vtt',l);swap('tv','tvsrc','tvtrk',TV[l].f,TV[l].p,'captions-tree-'+l+'.vtt',l);swap('gv','gvsrc','gvtrk','explainer-10gen-'+l+'.mp4','poster-10gen-'+l+'.jpg','captions-10gen-'+l+'.vtt',l);swap('dv','dvsrc','dvtrk','explainer-deeptime-'+l+'.mp4','poster-deeptime-'+l+'.jpg','captions-deeptime-'+l+'.vtt',l)}
+ [['kv','v3'],['tv','tree'],['gv','10gen'],['dv','deeptime'],['mv','miss']].forEach(([v,n])=>swap(v,v+'src',v+'trk','explainer-'+n+'-v2-'+l+'.mp4','poster-'+n+'-v2-'+l+'.jpg','captions-'+n+'-v2-'+l+'.vtt',l))}
 document.querySelectorAll('input[name=vlang]:not([disabled])').forEach(r=>r.addEventListener('change',()=>set(r.value,true)));
 set(lang,false);
 // video tabs
-const tabs=[['t-main','p-main','kv'],['t-tree','p-tree','tv'],['t-g10','p-g10','gv'],['t-deep','p-deep','dv']];
+const tabs=[['t-main','p-main','kv'],['t-tree','p-tree','tv'],['t-g10','p-g10','gv'],['t-deep','p-deep','dv'],['t-miss','p-miss','mv']];
 tabs.forEach(([t,p])=>document.getElementById(t).addEventListener('click',()=>{tabs.forEach(([t2,p2,v2])=>{const on=t2===t;document.getElementById(t2).setAttribute('aria-selected',on);document.getElementById(p2).hidden=!on;if(!on)document.getElementById(v2).pause()})}));
 // moments carousel
 const tr=document.getElementById('track'),sl=[...tr.children],mb=[...document.querySelectorAll('.mtabs button')],dots=[...document.querySelectorAll('.dots i')];
