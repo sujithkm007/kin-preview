@@ -406,6 +406,9 @@ main:focus{outline:none}
  .mtabs button{flex:0 0 auto}
 }
 html.cv-off .sec.zone{content-visibility:visible}
+/* r5 */
+.hearnote{display:table;margin:8px auto 0}
+.vcard video{background:#1d2452}
 </style>
 </head>
 <body>
@@ -734,7 +737,7 @@ window.kinVideoNear=function(vid){near.add(vid);apply(document.getElementById(vi
 let lang;try{lang=localStorage.getItem('kinVideoLang')}catch(e){}
 if(!M[lang])lang=(navigator.language||'en').toLowerCase().startsWith('ml')?'ml':'en';
 function set(l,save){lang=l;document.querySelector('input[name=vlang][value='+l+']').checked=true;if(save)try{localStorage.setItem('kinVideoLang',l)}catch(e){}
- [['kv','v3'],['tv','tree'],['gv','10gen'],['dv','deeptime'],['mv','miss']].forEach(([v,n])=>swap(v,v+'src',v+'trk','../lively/explainer-'+n+'-v2-'+l+'.mp4','../lively/poster-'+n+'-v2-'+l+'.jpg','../lively/captions-'+n+'-v2-'+l+'.vtt',l))}
+ [['kv','v3'],['tv','tree'],['gv','10gen'],['dv','deeptime'],['mv','miss']].forEach(([v,n])=>swap(v,v+'src',v+'trk','../lively/explainer-'+n+'-v2-'+l+'.mp4','art/poster-'+n+'.svg','../lively/captions-'+n+'-v2-'+l+'.vtt',l))}
 document.querySelectorAll('input[name=vlang]:not([disabled])').forEach(r=>r.addEventListener('change',()=>set(r.value,true)));
 set(lang,false);
 // video tabs
