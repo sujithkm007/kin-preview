@@ -30,8 +30,12 @@ window.kinGate=function(ev){ev.preventDefault();var f=document.getElementById("k
 })();
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kin · Your family’s stories shouldn’t disappear</title>
-<meta name="description" content="Kin keeps your family's voices, photos and stories on one living family tree, private to your family.">
+<title>Kin · Keep Grandma’s voice in the family</title>
+<meta name="description" content="Kin is a private family tree for Malayali families. Keep your grandmother’s voice, photos and stories, for her grandchildren and theirs.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kin · Keep Grandma’s voice in the family">
+<meta property="og:description" content="Kin is a private family tree for Malayali families. Keep your grandmother’s voice, photos and stories, for her grandchildren and theirs.">
+<meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#161c3e">
 <link rel="manifest" href="../lively/manifest.webmanifest">
 <link rel="icon" href="../lively/icon.svg" type="image/svg+xml">
@@ -376,6 +380,23 @@ footer .flogo svg{width:30px;height:30px;border-radius:8px}
 .vnote{color:#2f3140}
 .legend li,.step p,.prom p,.faq details p{color:#3b3d48}
 .cue span{white-space:nowrap}
+/* ===================== r3: performance, delight, a11y ===================== */
+/* sections that are off screen stop animating (big win for style/layout work on phones) */
+.zone:not(.inview) *,.zone:not(.inview)::after,.zone:not(.inview)::before{animation-play-state:paused!important}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;padding:12px 18px;border-radius:12px;background:var(--lime);color:#13210a;font:800 1rem var(--hfont);text-decoration:none}
+.skip:focus{top:12px}
+main:focus{outline:none}
+/* bond moment: both people warm up together while the light travels, then beat together */
+.person .ring,.person .halo{transition:stroke .35s,stroke-width .35s,opacity .35s,fill .35s}
+.person.charging .ring{stroke:#ffe9a8;stroke-width:4}
+.person.charging .halo{opacity:.6;fill:#ffd27a;animation:charge .5s ease-in-out infinite alternate}
+@keyframes charge{to{transform:scale(1.22);opacity:.9}}
+.person.energise .core{animation:zing2 1.1s cubic-bezier(.3,1.6,.5,1)}
+@keyframes zing2{20%{transform:scale(1.16)}40%{transform:scale(1)}60%{transform:scale(1.1)}100%{transform:scale(1)}}
+.bondlink{fill:none;stroke:#fffbe6;stroke-width:5;stroke-linecap:round;filter:drop-shadow(0 0 6px #ffd27a);pointer-events:none}
+.treebox .tip{pointer-events:none}
+.bubble.bondtalk{border-color:#c9f28a;box-shadow:0 0 0 4px rgba(201,242,138,.25),0 14px 36px rgba(5,7,20,.45)}
+@media(prefers-reduced-motion:reduce){.person.charging .halo{animation:none}.hero.singing .ff{animation:none}}
 </style>
 </head>
 <body>
@@ -384,10 +405,11 @@ footer .flogo svg{width:30px;height:30px;border-radius:8px}
 <p id="kgt" data-kin-name="Password gate text 1: “Kin is in private preview”" data-kin-id="MS-GATE-TEXT-1" data-kin-auto>Kin is in private preview</p>
 <label for="kgpw" data-kin-name="Password gate label: “Password”" data-kin-id="MS-GATE-LABEL-PASSWORD" data-kin-auto>Password</label><input id="kgpw" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required data-kin-name="Password gate password field" data-kin-id="MS-GATE-FIELD-PASSWORD" data-kin-auto>
 <button type="submit" data-kin-name="Password gate button: “Enter”" data-kin-id="MS-GATE-BTN-ENTER" data-kin-auto>Enter</button><p class="kgerr" id="kgerr" role="alert" aria-live="polite" data-kin-name="Password gate password error message: “”" data-kin-id="MS-GATE-PASSWORD-ERROR-M" data-kin-auto></p></form></div>
+<a class="skip" href="#main" data-kin-name="Page link: “Skip to content”" data-kin-id="MS-PAGE-LINK-SKIP-TO-CONTENT" data-kin-auto>Skip to content</a>
 <header class="top" data-kin-id="NAV-1" data-kin-name="Top bar" data-kin-auto><div class="wrap" data-kin-name="Top bar content wrapper" data-kin-id="MS-NAV-CONTENT-WRAPPER" data-kin-auto><a class="logo" href="#hero" aria-label="Kin home" data-kin-name="Top bar logo link" data-kin-id="MS-NAV-LOGO" data-kin-auto><svg class="mark" aria-hidden="true" viewBox="0 0 200 200" data-kin-name="Icon in Top bar logo link" data-kin-id="MS-NAV-LOGO-ICON" data-kin-auto><defs><radialGradient id="mk1"><stop offset="0" stop-color="#c9f28a" stop-opacity=".55"/><stop offset="1" stop-color="#c9f28a" stop-opacity="0"/></radialGradient></defs><rect width="200" height="200" rx="48" fill="#141b31" data-kin-name="Icon in Top bar logo link, rectangle 1" data-kin-id="MS-NAV-LOGO-ICON-1" data-kin-auto/><circle cx="132" cy="62" r="56" fill="url(#mk1)" data-kin-name="Icon in Top bar logo link, circle 2" data-kin-id="MS-NAV-LOGO-ICON-2" data-kin-auto/><g fill="none" stroke="#d6ee86" stroke-width="16" stroke-linecap="round" data-kin-name="Icon in Top bar logo link, group 3" data-kin-id="MS-NAV-LOGO-ICON-3" data-kin-auto><path d="M70 40 V160" data-kin-name="Icon in Top bar logo link, group 3, shape 1" data-kin-id="MS-NAV-LOGO-ICON-3-1" data-kin-auto/><path d="M74 104 C96 92 116 76 134 56" data-kin-name="Icon in Top bar logo link, group 3, shape 2" data-kin-id="MS-NAV-LOGO-ICON-3-2" data-kin-auto/><path d="M78 110 C104 124 120 142 140 164" data-kin-name="Icon in Top bar logo link, group 3, shape 3" data-kin-id="MS-NAV-LOGO-ICON-3-3" data-kin-auto/></g><circle cx="138" cy="50" r="15" fill="#c9f28a" data-kin-name="Icon in Top bar logo link, circle 4" data-kin-id="MS-NAV-LOGO-ICON-4" data-kin-auto/><circle cx="160" cy="76" r="9" fill="#7fe08a" data-kin-name="Icon in Top bar logo link, circle 5" data-kin-id="MS-NAV-LOGO-ICON-5" data-kin-auto/><circle cx="114" cy="38" r="7" fill="#ffc46b" data-kin-name="Icon in Top bar logo link, circle 6" data-kin-id="MS-NAV-LOGO-ICON-6" data-kin-auto/></svg><span data-kin-name="Top bar text: “kin”" data-kin-id="MS-NAV-TXT-1" data-kin-auto>kin</span></a>
 <ul class="menu" aria-label="Main" data-kin-name="Top bar list" data-kin-id="MS-NAV-LIST" data-kin-auto><li data-kin-name="Top bar list, item 1: “Videos”" data-kin-id="MS-NAV-LIST-LI-1" data-kin-auto><a href="#videos" data-kin-name="Top bar link: “Videos”" data-kin-id="MS-NAV-LINK-VIDEOS" data-kin-auto>Videos</a></li><li data-kin-name="Top bar list, item 2: “The tree”" data-kin-id="MS-NAV-LIST-LI-2" data-kin-auto><a href="#tree" data-kin-name="Top bar link: “The tree”" data-kin-id="MS-NAV-LINK-THE-TREE" data-kin-auto>The tree</a></li><li data-kin-name="Top bar list, item 3: “How it works”" data-kin-id="MS-NAV-LIST-LI-3" data-kin-auto><a href="#how" data-kin-name="Top bar link: “How it works”" data-kin-id="MS-NAV-LINK-HOW-IT-WORKS" data-kin-auto>How it works</a></li><li data-kin-name="Top bar list, item 4: “Privacy”" data-kin-id="MS-NAV-LIST-LI-4" data-kin-auto><a href="#privacy" data-kin-name="Top bar link: “Privacy”" data-kin-id="MS-NAV-LINK-PRIVACY" data-kin-auto>Privacy</a></li><li data-kin-name="Top bar list, item 5: “FAQ”" data-kin-id="MS-NAV-LIST-LI-5" data-kin-auto><a href="#faq" data-kin-name="Top bar link: “FAQ”" data-kin-id="MS-NAV-LINK-FAQ" data-kin-auto>FAQ</a></li></ul>
 <button class="topfb" id="topfb" type="button" aria-haspopup="dialog" aria-controls="fbm" aria-label="Give feedback" data-kin-name="Top bar button: “Give feedback”" data-kin-id="MS-NAV-BTN-GIVE-FEEDBACK" data-kin-auto><svg viewBox="0 0 24 24" aria-hidden="true" data-kin-name="Icon in Top bar button: “Give feedback”" data-kin-id="MS-NAV-BTN-GIVE-FEEDBACK-ICON" data-kin-auto><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" data-kin-name="Icon in Top bar button: “Give feedback”, shape 1" data-kin-id="MS-NAV-BTN-GIVE-FEEDBACK-ICON-1" data-kin-auto/><path d="M8 9.5h8M8 12.5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" data-kin-name="Icon in Top bar button: “Give feedback”, shape 2" data-kin-id="MS-NAV-BTN-GIVE-FEEDBACK-ICON-2" data-kin-auto/></svg></button><a class="btn" href="#join" data-kin-name="Top bar button: “Join waitlist”" data-kin-id="MS-NAV-BTN-JOIN-WAITLIST" data-kin-auto>Join waitlist</a></div></header>
-<main data-kin-name="Page main area" data-kin-id="MS-PAGE-MAIN-AREA" data-kin-auto>
+<main id="main" tabindex="-1" data-kin-name="Page main" data-kin-id="MS-PAGE-MAIN" data-kin-auto>
 <section class="hero zone" id="hero" data-kin-id="HERO-1" data-kin-name="Hero" data-kin-auto>
 <div class="sky" aria-hidden="true" data-kin-name="Hero sky" data-kin-id="MS-HERO-SKY" data-kin-auto><canvas id="stars" data-kin-name="Hero canvas 1" data-kin-id="MS-HERO-CANVAS-1" data-kin-auto></canvas><span class="mmoon" data-kin-name="Hero text 1" data-kin-id="MS-HERO-TXT-1" data-kin-auto></span>
 <svg class="world" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" data-kin-name="Hero illustration 1" data-kin-id="MS-HERO-ART-1" data-kin-auto>
@@ -497,19 +519,19 @@ footer .flogo svg{width:30px;height:30px;border-radius:8px}
     <div class="tabwrap" data-kin-name="Video showcase tabwrap" data-kin-id="MS-VID-TABWRAP" data-kin-auto><div class="tabs" role="tablist" aria-label="Videos" id="vtabs" data-kin-name="Video showcase video tabs" data-kin-id="MS-VID-VIDEO-TABS" data-kin-auto><button role="tab" id="t-main" aria-selected="true" aria-controls="p-main" data-kin-name="Video showcase tab: “What is Kin?”" data-kin-id="MS-VID-TAB-WHAT-IS-KIN" data-kin-auto>What is Kin?</button><button role="tab" id="t-tree" aria-selected="false" aria-controls="p-tree" data-kin-name="Video showcase tab: “After one year”" data-kin-id="MS-VID-TAB-AFTER-ONE-YEAR" data-kin-auto>After one year</button><button role="tab" id="t-g10" aria-selected="false" aria-controls="p-g10" data-kin-name="Video showcase tab: “10 generations”" data-kin-id="MS-VID-TAB-10-GENERATIONS" data-kin-auto>10 generations</button><button role="tab" id="t-deep" aria-selected="false" aria-controls="p-deep" data-kin-name="Video showcase tab: “First humans to you”" data-kin-id="MS-VID-TAB-FIRST-HUMANS-TO-YO" data-kin-auto>First humans to you</button><button role="tab" id="t-miss" aria-selected="false" aria-controls="p-miss" data-kin-name="Video showcase tab: “What you’ll miss”" data-kin-id="MS-VID-TAB-WHAT-YOU-LL-MISS" data-kin-auto>What you’ll miss</button></div><button type="button" class="tmore" id="tmore" aria-label="Show more video choices" tabindex="-1" data-kin-name="Video showcase button: “Show more video choices”" data-kin-id="MS-VID-BTN-SHOW-MORE-VIDEO-CH" data-kin-auto><svg viewBox="0 0 24 24" aria-hidden="true" data-kin-name="Icon in Video showcase button: “Show more video choices”" data-kin-id="MS-VID-BTN-SHOW-MORE-VIDEO-CH-ICON" data-kin-auto><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" data-kin-name="Icon in Video showcase button: “Show more video choices”, shape 1" data-kin-id="MS-VID-BTN-SHOW-MORE-VIDEO-CH-ICON-1" data-kin-auto/></svg></button></div>
     <div class="vcard" data-kin-name="Video showcase video card" data-kin-id="MS-VID-VIDEO-CARD" data-kin-auto>
       <div class="panel" id="p-main" role="tabpanel" aria-labelledby="t-main" data-kin-name="Video showcase video panel 1" data-kin-id="MS-VID-VIDEO-PANEL" data-kin-auto>
-        <video id="kv" controls playsinline preload="metadata" poster="../lively/poster-v3-v2-en.jpg" aria-label="What is Kin, about 80 seconds" data-kin-name="Video showcase video player (What is Kin, about 80 seconds)" data-kin-id="MS-VID-VIDEO" data-kin-auto><source id="kvsrc" src="../lively/explainer-v3-v2-en.mp4" type="video/mp4"><track id="kvtrk" kind="captions" src="../lively/captions-v3-v2-en.vtt" srclang="en" label="English" default></video>
+        <video id="kv" controls playsinline preload="none" aria-label="What is Kin, about 80 seconds" data-kin-name="Video showcase video player (What is Kin, about 80 seconds)" data-kin-id="MS-VID-VIDEO" data-kin-auto><source id="kvsrc" type="video/mp4"><track id="kvtrk" kind="captions" srclang="en" label="English" default></video>
       </div>
       <div class="panel" id="p-tree" role="tabpanel" aria-labelledby="t-tree" hidden data-kin-id="VID-2" data-kin-name="&quot;After one year&quot; video panel" data-kin-auto>
-        <video id="tv" controls playsinline preload="none" poster="../lively/poster-tree-v2-en.jpg" aria-label="A family tree after a year with Kin, about 47 seconds" data-kin-name="&quot;After one year&quot; video panel video player (A family tree after a year with Kin, about 47…)" data-kin-id="MS-VID-2-VIDEO" data-kin-auto><source id="tvsrc" src="../lively/explainer-tree-v2-en.mp4" type="video/mp4"><track id="tvtrk" kind="captions" src="../lively/captions-tree-v2-en.vtt" srclang="en" label="English" default></video>
+        <video id="tv" controls playsinline preload="none" aria-label="A family tree after a year with Kin, about 47 seconds" data-kin-name="&quot;After one year&quot; video panel video player (A family tree after a year with Kin, about 47…)" data-kin-id="MS-VID-2-VIDEO" data-kin-auto><source id="tvsrc" type="video/mp4"><track id="tvtrk" kind="captions" srclang="en" label="English" default></video>
       </div>
       <div class="panel" id="p-g10" role="tabpanel" aria-labelledby="t-g10" hidden data-kin-id="VID-9" data-kin-name="&quot;10 generations&quot; video panel" data-kin-auto>
-        <video id="gv" controls playsinline preload="none" poster="../lively/poster-10gen-v2-en.jpg" aria-label="What if Kin existed 10 generations ago? About 64 seconds. An imagined family." data-kin-name="&quot;10 generations&quot; video panel video player (What if Kin existed 10 generations ago? About 64…)" data-kin-id="MS-VID-9-VIDEO" data-kin-auto><source id="gvsrc" src="../lively/explainer-10gen-v2-en.mp4" type="video/mp4"><track id="gvtrk" kind="captions" src="../lively/captions-10gen-v2-en.vtt" srclang="en" label="English" default></video>
+        <video id="gv" controls playsinline preload="none" aria-label="What if Kin existed 10 generations ago? About 64 seconds. An imagined family." data-kin-name="&quot;10 generations&quot; video panel video player (What if Kin existed 10 generations ago? About 64…)" data-kin-id="MS-VID-9-VIDEO" data-kin-auto><source id="gvsrc" type="video/mp4"><track id="gvtrk" kind="captions" srclang="en" label="English" default></video>
       </div>
       <div class="panel" id="p-deep" role="tabpanel" aria-labelledby="t-deep" hidden data-kin-id="VID-10" data-kin-name="&quot;First humans to you&quot; video panel" data-kin-auto>
-        <video id="dv" controls playsinline preload="none" poster="../lively/poster-deeptime-v2-en.jpg" aria-label="From the first humans to you, about 78 seconds" data-kin-name="&quot;First humans to you&quot; video panel video player (From the first humans to you, about 78 seconds)" data-kin-id="MS-VID-10-VIDEO" data-kin-auto><source id="dvsrc" src="../lively/explainer-deeptime-v2-en.mp4" type="video/mp4"><track id="dvtrk" kind="captions" src="../lively/captions-deeptime-v2-en.vtt" srclang="en" label="English" default></video>
+        <video id="dv" controls playsinline preload="none" aria-label="From the first humans to you, about 78 seconds" data-kin-name="&quot;First humans to you&quot; video panel video player (From the first humans to you, about 78 seconds)" data-kin-id="MS-VID-10-VIDEO" data-kin-auto><source id="dvsrc" type="video/mp4"><track id="dvtrk" kind="captions" srclang="en" label="English" default></video>
       </div>
       <div class="panel" id="p-miss" role="tabpanel" aria-labelledby="t-miss" hidden data-kin-id="VID-11" data-kin-name="&quot;What you&#x27;ll miss&quot; video panel" data-kin-auto>
-        <video id="mv" controls playsinline preload="none" poster="../lively/poster-miss-v2-en.jpg" aria-label="What you’ll miss without Kin, about 50 seconds" data-kin-name="&quot;What you&#x27;ll miss&quot; video panel video player (What you’ll miss without Kin, about 50 seconds)" data-kin-id="MS-VID-11-VIDEO" data-kin-auto><source id="mvsrc" src="../lively/explainer-miss-v2-en.mp4" type="video/mp4"><track id="mvtrk" kind="captions" src="../lively/captions-miss-v2-en.vtt" srclang="en" label="English" default></video>
+        <video id="mv" controls playsinline preload="none" aria-label="What you’ll miss without Kin, about 50 seconds" data-kin-name="&quot;What you&#x27;ll miss&quot; video panel video player (What you’ll miss without Kin, about 50 seconds)" data-kin-id="MS-VID-11-VIDEO" data-kin-auto><source id="mvsrc" type="video/mp4"><track id="mvtrk" kind="captions" srclang="en" label="English" default></video>
       </div>
       <div data-kin-id="LANG-1" data-kin-name="Video language picker" data-kin-auto><fieldset class="lang" role="radiogroup" aria-label="Video language" data-kin-name="Video language picker fieldset 1" data-kin-id="MS-LANG-FIELDSET-1" data-kin-auto><legend class="sr" data-kin-name="Video language picker legend 1" data-kin-id="MS-LANG-LEGEND-1" data-kin-auto>Video language</legend>
       <label data-kin-name="Video language picker label: “English”" data-kin-id="MS-LANG-LABEL-ENGLISH" data-kin-auto><input type="radio" name="vlang" value="en" data-kin-name="Video language picker radio: “English”" data-kin-id="MS-LANG-RADIO-VLANG" data-kin-auto> English</label>
@@ -529,7 +551,7 @@ footer .flogo svg{width:30px;height:30px;border-radius:8px}
   <h2 data-kin-name="Family tree and bond moment heading: “One living tree for the whole family”" data-kin-id="MS-BOND-HEADING" data-kin-auto>One living tree for the <em data-kin-name="Family tree and bond moment emphasis: “whole family”" data-kin-id="MS-BOND-TXT-5" data-kin-auto>whole family</em></h2>
   <p class="lead" data-kin-name="Family tree and bond moment lead paragraph: “Elders sit at the trunk. Young ones grow…”" data-kin-id="MS-BOND-LEAD-PARAGRAPH" data-kin-auto>Elders sit at the trunk. Young ones grow out on the branches. Glowing threads join everyone.</p>
   <div class="treebox" data-kin-name="Family tree and bond moment treebox" data-kin-id="MS-BOND-TREEBOX" data-kin-auto>
-<svg viewBox="0 0 400 430" role="img" aria-labelledby="ttl" data-kin-name="Family tree and bond moment illustration 1" data-kin-id="MS-BOND-ART-1" data-kin-auto><title id="ttl">An example family tree at night. Muthassi and Muthachan sit at the trunk; parents on the middle branches; children and a baby out on the branches. Glowing threads join each person to the next. When two people share a memory, light travels from both ends of their thread, meets in the middle, and both of them glow together.</title>
+<svg viewBox="0 0 400 430" role="group" aria-labelledby="ttl" data-kin-name="Family tree and bond moment illustration 1" data-kin-id="MS-BOND-ART-1" data-kin-auto><title id="ttl">An example family tree at night. Muthassi and Muthachan sit at the trunk; parents on the middle branches; children and a baby out on the branches. Glowing threads join each person to the next. When two people share a memory, light travels from both ends of their thread, meets in the middle, and both of them glow together.</title>
 <defs><radialGradient id="tmoon" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#f3d9a4"/><stop offset=".55" stop-color="#d08a56"/><stop offset="1" stop-color="#7a3f4a"/></radialGradient>
 <radialGradient id="thalo"><stop offset=".5" stop-color="#ffcf8a" stop-opacity=".32"/><stop offset="1" stop-color="#ffcf8a" stop-opacity="0"/></radialGradient>
 <linearGradient id="tbark" x1="0" x2="1"><stop offset="0" stop-color="#6a3e22"/><stop offset=".5" stop-color="#a8683a"/><stop offset="1" stop-color="#6a3e22"/></linearGradient>
@@ -694,9 +716,12 @@ window.KIN_ENDPOINTS={waitlist:'',feedback:''};
 window.kinSend=function(kind,data){var u=window.KIN_ENDPOINTS[kind];if(!u)return Promise.resolve(false);return fetch(u,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(function(){return true},function(){return false})};
 (function(){
 const M={en:{l:'English'},ml:{l:'മലയാളം'}};
-function swap(vid,srcId,trkId,file,poster,cap,l){const v=document.getElementById(vid),was=!v.paused;document.getElementById(srcId).src=file;v.poster=poster;
- const o=document.getElementById(trkId),t=document.createElement('track');t.id=trkId;t.kind='captions';t.src=cap;t.srclang=l;t.label=M[l].l;t.default=true;o.replaceWith(t);v.load();
+const near=new Set();
+function apply(v){const w=v._want;if(!w||v._has===w.file)return;const was=!v.paused;document.getElementById(w.srcId).src=w.file;v.poster=w.poster;
+ const o=document.getElementById(w.trkId),t=document.createElement('track');t.id=w.trkId;t.kind='captions';t.src=w.cap;t.srclang=w.l;t.label=M[w.l].l;t.default=true;o.replaceWith(t);v.load();v._has=w.file;
  t.addEventListener('load',()=>{if(v.textTracks[0])v.textTracks[0].mode='showing'});if(was)v.play().catch(()=>{})}
+function swap(vid,srcId,trkId,file,poster,cap,l){const v=document.getElementById(vid);v._want={srcId,trkId,file,poster,cap,l};if(near.has(vid))apply(v)}
+window.kinVideoNear=function(vid){near.add(vid);apply(document.getElementById(vid))};
 let lang;try{lang=localStorage.getItem('kinVideoLang')}catch(e){}
 if(!M[lang])lang=(navigator.language||'en').toLowerCase().startsWith('ml')?'ml':'en';
 function set(l,save){lang=l;document.querySelector('input[name=vlang][value='+l+']').checked=true;if(save)try{localStorage.setItem('kinVideoLang',l)}catch(e){}
@@ -704,8 +729,9 @@ function set(l,save){lang=l;document.querySelector('input[name=vlang][value='+l+
 document.querySelectorAll('input[name=vlang]:not([disabled])').forEach(r=>r.addEventListener('change',()=>set(r.value,true)));
 set(lang,false);
 // video tabs
+{const vs=document.getElementById('videos');if('IntersectionObserver' in window&&vs){const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){kinVideoNear('kv');o.disconnect()}},{rootMargin:'150px 0px'});o.observe(vs)}else kinVideoNear('kv')}
 const tabs=[['t-main','p-main','kv'],['t-tree','p-tree','tv'],['t-g10','p-g10','gv'],['t-deep','p-deep','dv'],['t-miss','p-miss','mv']];
-tabs.forEach(([t,p])=>document.getElementById(t).addEventListener('click',()=>{tabs.forEach(([t2,p2,v2])=>{const on=t2===t;document.getElementById(t2).setAttribute('aria-selected',on);document.getElementById(p2).hidden=!on;if(!on)document.getElementById(v2).pause()})}));
+tabs.forEach(([t,p,v])=>document.getElementById(t).addEventListener('click',()=>{kinVideoNear(v);tabs.forEach(([t2,p2,v2])=>{const on=t2===t;document.getElementById(t2).setAttribute('aria-selected',on);document.getElementById(p2).hidden=!on;if(!on)document.getElementById(v2).pause()})}));
 // moments carousel
 const tr=document.getElementById('track'),sl=[...tr.children],mb=[...document.querySelectorAll('.mtabs button')],dots=[...document.querySelectorAll('.dots i')];
 function mark(i){mb.forEach((b,k)=>b.setAttribute('aria-selected',k===i));dots.forEach((d,k)=>d.classList.toggle('on',k===i))}
@@ -755,10 +781,12 @@ const T=[...svg.querySelectorAll('.thr')],G=[...svg.querySelectorAll('.thr-glow'
 function bond(th,tell){if(busy||!th)return;busy=true;const gl=G[T.indexOf(th)],L=th.getTotalLength(),dur=RM?1:1000,ps=[P[th.dataset.a],P[th.dataset.b]];
  const a=el('circle',{r:6.5,class:'pulse'},'MS-TREE-BOND-PULSE-A','Bond pulse from '+ps[0].dataset.label),b=el('circle',{r:6.5,class:'pulse'},'MS-TREE-BOND-PULSE-B','Bond pulse from '+ps[1].dataset.label);
  th.classList.add('bonding');gl&&gl.classList.add('bonding');ps.forEach(g=>g.classList.add('charging'));
+ const tr=[0,1].map(i=>{const p=el('path',{d:th.getAttribute('d'),class:'bondlink'},'MS-TREE-BOND-TRAIL-'+(i?'B':'A'),'Bond light trail from '+ps[i].dataset.label);th.after(p);return p});
+ const trail=e=>{const sg=L*.5*e;tr[0].style.strokeDasharray=sg+' '+L;tr[1].style.strokeDasharray='0 '+(L-sg)+' '+sg+' '+L};trail(RM?1:0);
  if(tell)say('<small>A bond moment</small><b>'+ps[0].dataset.label+' &amp; '+ps[1].dataset.label+'</b><br>They shared a memory, so their thread lights up from both ends.',4200);
  const t0=performance.now();
  (function step(now){const k=Math.min(1,(now-t0)/dur),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2,pa=th.getPointAtLength(L*.5*e),pb=th.getPointAtLength(L-L*.5*e);
-  a.setAttribute('cx',pa.x);a.setAttribute('cy',pa.y);b.setAttribute('cx',pb.x);b.setAttribute('cy',pb.y);
+  a.setAttribute('cx',pa.x);a.setAttribute('cy',pa.y);b.setAttribute('cx',pb.x);b.setAttribute('cy',pb.y);trail(e);
   if(k<1)return requestAnimationFrame(step);
   a.remove();b.remove();const m=th.getPointAtLength(L/2),rs=[];
   rs.push(el('circle',{cx:m.x,cy:m.y,r:7,class:'ripple2'},'MS-TREE-BOND-RIPPLE-MID','Bond ripple where the two pulses meet'));
@@ -767,7 +795,7 @@ function bond(th,tell){if(busy||!th)return;busy=true;const gl=G[T.indexOf(th)],L
    rs.push(el('circle',{cx:g.dataset.cx,cy:g.dataset.cy,r:+g.dataset.r*1.5,class:'ripple2 r2'},'MS-TREE-BOND-RIPPLE-'+(i?'B':'A')+'-2','Second bond ripple around '+g.dataset.label));
    spark(+g.dataset.cx,+g.dataset.cy-4,'#fff3b0')});
   const fl=[...svg.querySelectorAll('.cb')].filter(x=>{const bb=x.getBBox();return Math.hypot(bb.x+bb.width/2-m.x,bb.y+bb.height/2-m.y)<110});fl.forEach(x=>x.classList.add('lit'));
-  setTimeout(()=>rs.forEach(r=>r.remove()),1500);
+  setTimeout(()=>rs.forEach(r=>r.remove()),1500);tr.forEach(p=>{p.style.transition='opacity .7s';setTimeout(()=>p.style.opacity=0,700);setTimeout(()=>p.remove(),1500)});
   setTimeout(()=>{ps.forEach(g=>g.classList.remove('energise','charging'));fl.forEach(x=>x.classList.remove('lit'));th.classList.remove('bonding');gl&&gl.classList.remove('bonding');busy=false},1700)})(t0)}
 window.kinBond=bond;
 svg.querySelectorAll('.person').forEach(g=>act(g,()=>{const mine=T.filter(t=>t.dataset.a===g.dataset.id||t.dataset.b===g.dataset.id);if(mine.length){busy=false;bond(mine[Math.floor(Math.random()*mine.length)],true)}}));
@@ -819,6 +847,14 @@ f.consent.addEventListener('change',()=>{if(f.consent.checked){bad(f.consent,fal
 f.addEventListener('submit',ev=>{ev.preventDefault();const[el,m]=check();bad(c,el===c);bad(f.consent,el===f.consent);er.textContent=m;if(el){el.focus();return}
  const n=f.name.value.trim().split(' ')[0];kinSend('waitlist',{via:f.via.value,contact:c.value.trim(),name:n,country:f.country.value,consent:true});
  document.getElementById('tn').textContent=n?', '+n:'';f.hidden=true;const t=document.getElementById('thx');t.classList.add('show');t.focus()});
+})();
+// ===== r3: pause off-screen sections; bond trail + haptic; tap the step pictures =====
+(function(){
+const zs=document.querySelectorAll('.zone');
+if('IntersectionObserver' in window){const o=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('inview',e.isIntersecting)),{rootMargin:'120px 0px'});zs.forEach(z=>o.observe(z))}
+else zs.forEach(z=>z.classList.add('inview'));
+// haptic + bubble accent when a person is tapped (the trail itself lives in bond())
+const bb=document.getElementById('bubble');document.querySelectorAll('.treebox .person,#bondbtn').forEach(g=>g.addEventListener('click',()=>{try{navigator.vibrate&&navigator.vibrate([12,60,12])}catch(e){}if(bb){bb.classList.add('bondtalk');setTimeout(()=>bb.classList.remove('bondtalk'),2600)}}));
 })();
 
 </script>
