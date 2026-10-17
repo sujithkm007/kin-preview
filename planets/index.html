@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<style id="kgate-css">
+html.kg-locked body>*:not(#kgate){display:none!important}
+html.kg-locked body{background:radial-gradient(ellipse at 50% 20%,#1d3a4a 0,#0b1026 55%,#05070f 100%);min-height:100vh;margin:0}
+#kgate{display:none}
+html.kg-locked #kgate{display:flex;position:fixed;inset:0;align-items:center;justify-content:center;padding:24px;font-family:Poppins,system-ui,sans-serif;color:#fff7e6;z-index:99999}
+#kgate .kgbox{width:100%;max-width:360px;text-align:center;background:rgba(12,24,40,.82);border:2px solid #5ff2d6;border-radius:24px;padding:28px 22px;box-shadow:0 0 40px rgba(95,242,214,.25)}
+#kgate svg{width:72px;height:72px;filter:drop-shadow(0 0 14px rgba(201,242,138,.45))}
+#kgate p{margin:12px 0 18px;font-weight:700;font-size:1.05rem}
+#kgate label{display:block;text-align:left;font-size:.9rem;margin-bottom:6px;color:#e9dcc6}
+#kgate input{box-sizing:border-box;width:100%;min-height:48px;font-size:16px;border-radius:14px;border:2px solid #3a4466;background:#141b31;color:#fff7e6;padding:0 14px}
+#kgate input:focus{outline:3px solid #ffd27a;outline-offset:2px}
+#kgate button{margin-top:12px;width:100%;min-height:48px;font-size:16px;font-weight:800;border:0;border-radius:99px;background:#c9f28a;color:#0d2a00;cursor:pointer;box-shadow:0 0 16px rgba(201,242,138,.45)}
+#kgate .kgerr{min-height:1.4em;margin:10px 0 0;font-size:.9rem;color:#ffd27a;font-weight:600}
+@media (prefers-reduced-motion:reduce){#kgate *{transition:none!important;animation:none!important}}
+</style>
+<script>
+(function(){var K="kinPreviewOk",H="dfd2ba67483ed05c04d437b4df108b0032564f9935e00e529968171aa8550092",ok=false;try{ok=localStorage.getItem(K)===H}catch(e){}
+if(!ok)document.documentElement.classList.add("kg-locked");
+window.kinGate=function(ev){ev.preventDefault();var f=document.getElementById("kgpw"),er=document.getElementById("kgerr");
+ var v=(f.value||"").trim().toLowerCase();
+ if(!(window.crypto&&crypto.subtle)){er.textContent="Please open this page over https.";return false}
+ crypto.subtle.digest("SHA-256",new TextEncoder().encode(v)).then(function(b){var h=Array.prototype.map.call(new Uint8Array(b),function(x){return("0"+x.toString(16)).slice(-2)}).join("");
+  if(h===H){try{localStorage.setItem(K,H)}catch(e){}document.documentElement.classList.remove("kg-locked");er.textContent=""}
+  else{er.textContent="That's not quite right. Please try again.";f.select()}});return false};
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kin · Planet versions</title>
+<style>
+:root{color-scheme:dark}
+body{margin:0;background:#0b1026;color:#fff7e6;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.45}
+header{padding:28px 18px 8px;max-width:1200px;margin:0 auto}
+h1{margin:0 0 6px;font-size:1.7rem;color:#c9f28a}
+header p{margin:6px 0;color:#d9cdb6;font-size:.95rem}
+ul{list-style:none;margin:0 auto;padding:12px 14px 40px;max-width:1200px;display:grid;gap:22px;grid-template-columns:1fr}
+@media(min-width:760px){ul{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){ul{grid-template-columns:repeat(3,1fr)}}
+.card a{display:block;text-decoration:none;color:inherit;background:#141b31;border:1px solid #2d3a5e;border-radius:22px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+.card a:focus-visible{outline:3px solid #ffd27a;outline-offset:3px}
+.card img{display:block;width:100%;height:auto;aspect-ratio:390/844;object-fit:cover;object-position:top;background:#1d2440}
+.meta{padding:14px 16px 18px}
+h2{margin:0 0 6px;font-size:1.25rem}
+.n{display:inline-block;min-width:1.9em;padding:2px 6px;margin-right:4px;border-radius:99px;background:#c9f28a;color:#0d2a00;font-size:.85rem;text-align:center;vertical-align:2px}
+.desc{margin:0 0 8px;color:#f1e6cf}
+.date,.pub{margin:2px 0;font-size:.85rem;color:#a9b3d6}
+.open{display:inline-flex;align-items:center;min-height:44px;margin-top:8px;padding:0 18px;border-radius:99px;background:#c9f28a;color:#0d2a00;font-weight:800}
+</style>
+</head>
+<body>
+<div id="kgate" role="dialog" aria-modal="true" aria-labelledby="kgt"><form class="kgbox" onsubmit="return kinGate(event)">
+<svg viewBox="0 0 200 200" aria-hidden="true"><rect width="200" height="200" rx="48" fill="#141b31"/><g fill="none" stroke="#d6ee86" stroke-width="16" stroke-linecap="round"><path d="M70 40 V160"/><path d="M74 104 C96 92 116 76 134 56"/><path d="M78 110 C104 124 120 142 140 164"/></g><circle cx="138" cy="50" r="15" fill="#c9f28a"/><circle cx="160" cy="76" r="9" fill="#7fe08a"/><circle cx="114" cy="38" r="7" fill="#ffc46b"/></svg>
+<p id="kgt">Kin is in private preview</p>
+<label for="kgpw">Password</label><input id="kgpw" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required>
+<button type="submit">Enter</button><p class="kgerr" id="kgerr" role="alert" aria-live="polite"></p></form></div>
+<header><h1>Kin · every planet version</h1>
+<p>37 planet / alien-world versions of the Kin landing page, oldest to newest. Tap a picture to open that version.</p>
+<p>Pictures show the top of each page on a phone (390 px wide). “File date” is the saved file’s time (Europe/Berlin); these backups were all re-copied on 17 Oct around 09:15, so where known the first-published time from the site history is shown too.</p></header>
+<ul>
+<li class="card"><a href="v1/" aria-label="Open v1">
+<img src="thumbs/v1.jpg" width="780" height="1688" loading="eager" alt="Hero of v1 at phone width">
+<div class="meta"><h2><span class="n">1</span> v1</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); first planet theme with “Snap it. Say it.” hero and Muthassi photo card</p>
+<p class="date">File date: 17 Oct 2026, 09:15:50 CEST</p><p class="pub">First published: 2026-10-15 22:33 (root, “New-planet theme”) CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v2/" aria-label="Open v2">
+<img src="thumbs/v2.jpg" width="780" height="1688" loading="eager" alt="Hero of v2 at phone width">
+<div class="meta"><h2><span class="n">2</span> v2</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); new glowing-tree K logo mark</p>
+<p class="date">File date: 17 Oct 2026, 09:15:50 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v3/" aria-label="Open v3">
+<img src="thumbs/v3.jpg" width="780" height="1688" loading="lazy" alt="Hero of v3 at phone width">
+<div class="meta"><h2><span class="n">3</span> v3</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); adds “Every bond grows its own way” bonds section</p>
+<p class="date">File date: 17 Oct 2026, 09:15:50 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v4/" aria-label="Open v4">
+<img src="thumbs/v4.jpg" width="780" height="1688" loading="lazy" alt="Hero of v4 at phone width">
+<div class="meta"><h2><span class="n">4</span> v4</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); parrots in the palms, cow and calf in the scene</p>
+<p class="date">File date: 17 Oct 2026, 09:15:50 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v5/" aria-label="Open v5">
+<img src="thumbs/v5.jpg" width="780" height="1688" loading="lazy" alt="Hero of v5 at phone width">
+<div class="meta"><h2><span class="n">5</span> v5</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); adds 30-second Munich↔Palakkad story strip and dog/blossoms</p>
+<p class="date">File date: 17 Oct 2026, 09:15:50 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v6/" aria-label="Open v6">
+<img src="thumbs/v6.jpg" width="780" height="1688" loading="lazy" alt="Hero of v6 at phone width">
+<div class="meta"><h2><span class="n">6</span> v6</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); adds gold “Proud moments” milestones grid</p>
+<p class="date">File date: 17 Oct 2026, 09:15:50 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v7/" aria-label="Open v7">
+<img src="thumbs/v7.jpg" width="780" height="1688" loading="lazy" alt="Hero of v7 at phone width">
+<div class="meta"><h2><span class="n">7</span> v7</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); “A new world for old stories” kicker above the headline</p>
+<p class="date">File date: 17 Oct 2026, 09:15:50 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v8/" aria-label="Open v8">
+<img src="thumbs/v8.jpg" width="780" height="1688" loading="lazy" alt="Hero of v8 at phone width">
+<div class="meta"><h2><span class="n">8</span> v8</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); touch-glow breathing highlights, new elephant card art</p>
+<p class="date">File date: 17 Oct 2026, 09:15:50 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v9/" aria-label="Open v9">
+<img src="thumbs/v9.jpg" width="780" height="1688" loading="lazy" alt="Hero of v9 at phone width">
+<div class="meta"><h2><span class="n">9</span> v9</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); redrawn step panel illustrations</p>
+<p class="date">File date: 17 Oct 2026, 09:15:50 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v10/" aria-label="Open v10">
+<img src="thumbs/v10.jpg" width="780" height="1688" loading="lazy" alt="Hero of v10 at phone width">
+<div class="meta"><h2><span class="n">10</span> v10</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); glowing lumi creature (“It glows when you’re near”)</p>
+<p class="date">File date: 17 Oct 2026, 09:15:50 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v11/" aria-label="Open v11">
+<img src="thumbs/v11.jpg" width="780" height="1688" loading="lazy" alt="Hero of v11 at phone width">
+<div class="meta"><h2><span class="n">11</span> v11</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); sticky “Plant your family’s tree” call-to-action</p>
+<p class="date">File date: 17 Oct 2026, 09:15:50 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v12/" aria-label="Open v12">
+<img src="thumbs/v12.jpg" width="780" height="1688" loading="lazy" alt="Hero of v12 at phone width">
+<div class="meta"><h2><span class="n">12</span> v12</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); full landscape footer with EU-hosted / consent badges</p>
+<p class="date">File date: 17 Oct 2026, 09:15:50 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v13/" aria-label="Open v13">
+<img src="thumbs/v13.jpg" width="780" height="1688" loading="lazy" alt="Hero of v13 at phone width">
+<div class="meta"><h2><span class="n">13</span> v13</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); adds example quotes (Palakkad daughter, Munich grandson)</p>
+<p class="date">File date: 17 Oct 2026, 09:15:51 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v14/" aria-label="Open v14">
+<img src="thumbs/v14.jpg" width="780" height="1688" loading="lazy" alt="Hero of v14 at phone width">
+<div class="meta"><h2><span class="n">14</span> v14</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); glowing trunk fill as you scroll</p>
+<p class="date">File date: 17 Oct 2026, 09:15:51 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v15/" aria-label="Open v15">
+<img src="thumbs/v15.jpg" width="780" height="1688" loading="lazy" alt="Hero of v15 at phone width">
+<div class="meta"><h2><span class="n">15</span> v15</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); seed-to-sapling growth animation (“Your seed is ready”)</p>
+<p class="date">File date: 17 Oct 2026, 09:15:51 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v16/" aria-label="Open v16">
+<img src="thumbs/v16.jpg" width="780" height="1688" loading="lazy" alt="Hero of v16 at phone width">
+<div class="meta"><h2><span class="n">16</span> v16</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); same look, social share (OG) image metadata added</p>
+<p class="date">File date: 17 Oct 2026, 09:15:51 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v17/" aria-label="Open v17">
+<img src="thumbs/v17.jpg" width="780" height="1688" loading="lazy" alt="Hero of v17 at phone width">
+<div class="meta"><h2><span class="n">17</span> v17</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); “Explore this world” scroll cue in hero</p>
+<p class="date">File date: 17 Oct 2026, 09:15:51 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v18/" aria-label="Open v18">
+<img src="thumbs/v18.jpg" width="780" height="1688" loading="lazy" alt="Hero of v18 at phone width">
+<div class="meta"><h2><span class="n">18</span> v18</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); adds FAQ section</p>
+<p class="date">File date: 17 Oct 2026, 09:15:51 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v19/" aria-label="Open v19">
+<img src="thumbs/v19.jpg" width="780" height="1688" loading="lazy" alt="Hero of v19 at phone width">
+<div class="meta"><h2><span class="n">19</span> v19</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); hover/tap micro-interactions on cards</p>
+<p class="date">File date: 17 Oct 2026, 09:15:51 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v20/" aria-label="Open v20">
+<img src="thumbs/v20.jpg" width="780" height="1688" loading="lazy" alt="Hero of v20 at phone width">
+<div class="meta"><h2><span class="n">20</span> v20</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); same look, off-screen animation pausing for speed</p>
+<p class="date">File date: 17 Oct 2026, 09:15:51 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v21/" aria-label="Open v21">
+<img src="thumbs/v21.jpg" width="780" height="1688" loading="lazy" alt="Hero of v21 at phone width">
+<div class="meta"><h2><span class="n">21</span> v21</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); larger touch targets in privacy/consent area</p>
+<p class="date">File date: 17 Oct 2026, 09:15:51 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v22/" aria-label="Open v22">
+<img src="thumbs/v22.jpg" width="780" height="1688" loading="lazy" alt="Hero of v22 at phone width">
+<div class="meta"><h2><span class="n">22</span> v22</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); interactive guided-question recording demo</p>
+<p class="date">File date: 17 Oct 2026, 09:15:51 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v23/" aria-label="Open v23">
+<img src="thumbs/v23.jpg" width="780" height="1688" loading="lazy" alt="Hero of v23 at phone width">
+<div class="meta"><h2><span class="n">23</span> v23</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); recording templates (60 s / 2 min, ● REC)</p>
+<p class="date">File date: 17 Oct 2026, 09:15:53 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v24/" aria-label="Open v24">
+<img src="thumbs/v24.jpg" width="780" height="1688" loading="lazy" alt="Hero of v24 at phone width">
+<div class="meta"><h2><span class="n">24</span> v24</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); adds “Gift a memory” secret collection with tap-to-open gift</p>
+<p class="date">File date: 17 Oct 2026, 09:15:53 CEST</p><p class="pub">First published: 2026-10-16 21:59 (/planet/ restore) CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v25/" aria-label="Open v25">
+<img src="thumbs/v25.jpg" width="780" height="1688" loading="lazy" alt="Hero of v25 at phone width">
+<div class="meta"><h2><span class="n">25</span> v25</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); gift box unwrap animation and anniversary countdown</p>
+<p class="date">File date: 17 Oct 2026, 09:16:07 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v26/" aria-label="Open v26">
+<img src="thumbs/v26.jpg" width="780" height="1688" loading="lazy" alt="Hero of v26 at phone width">
+<div class="meta"><h2><span class="n">26</span> v26</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); explainer video with language picker (EN/ML)</p>
+<p class="date">File date: 17 Oct 2026, 09:16:07 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v27/" aria-label="Open v27">
+<img src="thumbs/v27.jpg" width="780" height="1688" loading="lazy" alt="Hero of v27 at phone width">
+<div class="meta"><h2><span class="n">27</span> v27</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); language picker labels in English</p>
+<p class="date">File date: 17 Oct 2026, 09:16:07 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v28/" aria-label="Open v28">
+<img src="thumbs/v28.jpg" width="780" height="1688" loading="lazy" alt="Hero of v28 at phone width">
+<div class="meta"><h2><span class="n">28</span> v28</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); remembers chosen video language</p>
+<p class="date">File date: 17 Oct 2026, 09:16:08 CEST</p><p class="pub">First published: 2026-10-16 06:13 (root) CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v29/" aria-label="Open v29">
+<img src="thumbs/v29.jpg" width="780" height="1688" loading="lazy" alt="Hero of v29 at phone width">
+<div class="meta"><h2><span class="n">29</span> v29</h2>
+<p class="desc">Night alien world (glowing palms, rising planet, fireflies); 75-second explainer v3</p>
+<p class="date">File date: 17 Oct 2026, 09:16:08 CEST</p><p class="pub">First published: 2026-10-16 06:23 (root) CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v30/" aria-label="Open v30">
+<img src="thumbs/v30.jpg" width="780" height="1688" loading="lazy" alt="Hero of v30 at phone width">
+<div class="meta"><h2><span class="n">30</span> v30</h2>
+<p class="desc">Simplified night hero (“Your family’s stories shouldn’t disappear”), alien palms and moon, language picker and 75 s explainer</p>
+<p class="date">File date: 17 Oct 2026, 09:16:09 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v31/" aria-label="Open v31">
+<img src="thumbs/v31.jpg" width="780" height="1688" loading="lazy" alt="Hero of v31 at phone width">
+<div class="meta"><h2><span class="n">31</span> v31</h2>
+<p class="desc">Darker night world with gold serif headline, explainer card and family-tree video</p>
+<p class="date">File date: 17 Oct 2026, 09:16:09 CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v32/" aria-label="Open v32">
+<img src="thumbs/v32.jpg" width="780" height="1688" loading="lazy" alt="Hero of v32 at phone width">
+<div class="meta"><h2><span class="n">32</span> v32</h2>
+<p class="desc">Brighter dusk-blue night sky hero with ivory content sections below</p>
+<p class="date">File date: 17 Oct 2026, 09:16:09 CEST</p><p class="pub">First published: 2026-10-16 12:37 (/next/) CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v33/" aria-label="Open v33">
+<img src="thumbs/v33.jpg" width="780" height="1688" loading="lazy" alt="Hero of v33 at phone width">
+<div class="meta"><h2><span class="n">33</span> v33</h2>
+<p class="desc">Dusk-blue night world, simplified plan section and plain-language copy</p>
+<p class="date">File date: 17 Oct 2026, 09:16:10 CEST</p><p class="pub">First published: 2026-10-16 12:51 (/next/) CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="v34/" aria-label="Open v34">
+<img src="thumbs/v34.jpg" width="780" height="1688" loading="lazy" alt="Hero of v34 at phone width">
+<div class="meta"><h2><span class="n">34</span> v34</h2>
+<p class="desc">Dusk-blue night world plus “A Year in Kin”, gift progress and engagement cards</p>
+<p class="date">File date: 17 Oct 2026, 09:16:10 CEST</p><p class="pub">First published: 2026-10-16 14:40 (/next/) CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="planet-v1/" aria-label="Open planet-v1">
+<img src="thumbs/planet-v1.jpg" width="780" height="1688" loading="lazy" alt="Hero of planet-v1 at phone width">
+<div class="meta"><h2><span class="n">35</span> planet-v1</h2>
+<p class="desc">Bright sunrise sky over a green Earth-like planet carrying a glowing family tree (“Your family is a world”)</p>
+<p class="date">File date: 17 Oct 2026, 09:16:23 CEST</p><p class="pub">First published: 2026-10-16 21:30 (/planet/) CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="planet-current/" aria-label="Open planet.html (current local)">
+<img src="thumbs/planet-current.jpg" width="780" height="1688" loading="lazy" alt="Hero of planet.html (current local) at phone width">
+<div class="meta"><h2><span class="n">36</span> planet.html (current local)</h2>
+<p class="desc">Dusk redo: violet-orange sky, huge glowing planet with glowing family tree; looks identical to planet-dusk-redo</p>
+<p class="date">File date: 17 Oct 2026, 09:16:22 CEST</p><p class="pub">First published: 2026-10-16 21:41 (/planet/, dusk redo) CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+<li class="card"><a href="planet-dusk-redo/" aria-label="Open planet-dusk-redo">
+<img src="thumbs/planet-dusk-redo.jpg" width="780" height="1688" loading="lazy" alt="Hero of planet-dusk-redo at phone width">
+<div class="meta"><h2><span class="n">37</span> planet-dusk-redo</h2>
+<p class="desc">Dusk redo: violet-orange sky, huge glowing planet with glowing family tree, immersive sections (latest, with element names)</p>
+<p class="date">File date: 17 Oct 2026, 09:16:23 CEST</p><p class="pub">First published: 2026-10-16 21:59 (backup /planet/planet-dusk-redo.html) CEST</p>
+<span class="open">Tap to open →</span></div></a></li>
+</ul>
+</body>
+</html>
